@@ -78,12 +78,6 @@
       <input type="radio" name="entry.485675243" value="No">No
       <br>
       <input type="radio" name="entry.485675243" value="Yes">Yes
-      <h3>Are you a member of another Australian political party?<br><span>If you are unsure check with the AEC and deregister from the other party.</span></h3>
-      <input type="radio" name="entry.1719800246" value="No">No
-      <br>
-      <input type="radio" name="entry.1719800246" value="Yes">Yes
-      <br>
-      <input type="radio" name="entry.1719800246" value="Unsure">Unsure
       <h3>Your email address:</h3>
       <input type="text" name="entry.1201109565">
       <h3>Your residential address:<br><span>As on electoral role</span></h3>
@@ -273,12 +267,15 @@
       <h3>You contact number:<br><span>We will SMS you before calling</span></h3>
       <input type="text" name="entry.134473684">
       <br>
+      <h3>Referred By (Optional)<br><span>How did you hear about Flux?</span></h3>
+      <input type='text' name='entry.279410956'>
+      <br>
       <input type="submit" value="Submit">
     </form>
   </section>
 
   <footer>&copy; FLUX 2015</footer>
   <script type="text/javascript">var submitted=false;</script>
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='thanks';}"></iframe>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='/thanks';}"></iframe>
   <script src="js/app.js"></script>
 </body>

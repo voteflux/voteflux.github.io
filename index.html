@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='fluxApp'>
     <head>
         <meta charset="utf-8">
         <title>Flux - Upgrade Democracy</title>
@@ -26,7 +26,7 @@
         <link rel='stylesheet' href='css/basscss.min.css'>
     </head>
 
-    <body>
+    <body ng-controller='FluxController as flux'>
         <div class="page-wrapper">
           <!-- header-2 -->
           <header class="header-2">
@@ -138,51 +138,51 @@
     			  </div>
     			  <div class="row features">
     			    <div class="col-sm-3">
-    			      <img src="../../common-files/icons/Chat@2x.png" alt="" width="100" height="100">
+    			      <img src="img/features/noun_specialist.svg" alt="" width="100" height="100">
     			      <h6>Empower Specialists</h6>
                 Politicians are middle men between specialists and policy, and by cutting them out of the picture we enable specialists to create the best policy they can, unmolested by external political interests.
     			    </div>
     			    <div class="col-sm-4 col-sm-offset-1">
-    			      <img src="../../common-files/icons/Responsive1@2x.png" alt="" width="100" height="100">
+    			      <img src="img/features/noun_trade.svg" alt="" width="100" height="100">
     			      <h6>Built in Progress Through Trade</h6>
                 Trading resources is one of the main mechanics behind both the redistribution of wealth and growing prosperity around the globe. Flux introduces this mechanic to the political arena, enabling innovators and democratic entrupenurs to solve problems with minimal hinderance.
     			    </div>
     			    <div class="col-sm-3 col-sm-offset-1">
-    			      <img src="../../common-files/icons/ps@2x.png" alt="" width="78" height="100">
+    			      <img src="img/features/noun_transparent.svg" alt="" width="78" height="100">
     			      <h6>Fully Transparent</h6>
                 Flux doesn't have absolute control over the voting system, which is run on a distributed public network and is able to be verified by everyone, everywhere, constantly, and consistently.
     			    </div>
     			  </div>
     			  <div class="row features">
     			    <div class="col-sm-3">
-    			      <img src="../../common-files/icons/Chat@2x.png" alt="" width="100" height="100">
+    			      <img src="img/features/noun_backroom_deals.svg" alt="" width="100" height="100">
     			      <h6>Stops Backroom Deals (the right way)</h6>
                 By embracing specialization Flux does away with the "one-person-for-all-issues" model, elimintating the potential and motivation for backroom deals.
     			    </div>
     			    <div class="col-sm-4 col-sm-offset-1">
-    			      <img src="../../common-files/icons/Responsive1@2x.png" alt="" width="100" height="100">
+    			      <img src="img/features/noun_high_quality_legislation.svg" alt="" width="100" height="100">
     			      <h6>Favours High Quality Legislation</h6>
                 Specialists naturally produce better quality legislation than generalists (like politicians), and by introducing <a href="https://www.youtube.com/watch?v=cwx9fZOL81c">opportunity cost and comparitive advantage</a> for legislators we help only the best legislation rise to the surface.
     			    </div>
     			    <div class="col-sm-3 col-sm-offset-1">
-    			      <img src="../../common-files/icons/ps@2x.png" alt="" width="78" height="100">
+    			      <img src="img/features/noun_voters.svg" alt="" width="78" height="100">
     			      <h6>Empower Voters</h6>
                 Flux enables regular Australians to become fully involved in the political process, and to focus on the issues they care most about.
     			    </div>
     			  </div>
     			  <div class="row features">
     			    <div class="col-sm-3">
-    			      <img src="../../common-files/icons/Responsive1@2x.png" alt="" width="100" height="100">
-    			      <h6>Encourages Criticism</h6>
+    			      <img src="img/features/noun_criticism_debate.svg" alt="" width="100" height="100">
+    			      <h6>Encourages Criticism and Debate</h6>
                 The ecosystem within Flux encourages a culture of criticism around new policy before it's enacted, and demands that policy options can withstand that criticism.
     			    </div>
     			    <div class="col-sm-4 col-sm-offset-1">
-    			      <img src="../../common-files/icons/Chat@2x.png" alt="" width="100" height="100">
+    			      <img src="img/features/noun_corruption.svg" alt="" width="100" height="100">
     			      <h6>Ends Corruption</h6>
                 Under Flux, lobbiests wouldn't need to convince politicians, they would need to convince the people. In this way special interests become directly accountable to the community they affect, and can't elbow their way through.
               </div>
     			    <div class="col-sm-3 col-sm-offset-1">
-    			      <img src="../../common-files/icons/ps@2x.png" alt="" width="78" height="100">
+    			      <img src="img/features/noun_conjecture.svg" alt="" width="78" height="100">
     			      <h6>Facilitates Conjecture</h6>
                 Flux is like an arena for ideas. By ensuring the best ideas are heard we create an open culture where conjecture is shared and innovation is encouraged and supported.
     			    </div>
@@ -432,6 +432,6 @@
         <script src="js/page-transitions.js"></script>
         <script src="js/startup-kit.js"></script>
         <script src='js/angular.min.js'></script>
-        <script src='js/main-ng.js'
+        <script src='js/flux-ng.js'></script>
     </body>
 </html>

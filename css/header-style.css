@@ -1112,7 +1112,7 @@ section * {
 }
 .header-2 .navbar .brand img:first-child {
   float: left;
-  margin: -10px 15px 0 0;
+  margin: -20px 15px 0 0;
 }
 .header-2 .navbar .nav > li {
   margin-left: 35px;

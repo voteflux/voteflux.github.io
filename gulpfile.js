@@ -19,7 +19,12 @@ gulp.task('css',function(){
 	return browserSync.reload({stream:true});
 });
 
+gulp.task('js',function(){
+	return browserSync.reload();
+});
+
 gulp.task("default", ['browser-sync'], function(){
 	gulp.watch("**/*.html", ['html']);
 	gulp.watch("**/*.css", ['css']);
+	gulp.watch("**/*.js", ['js']);
 });

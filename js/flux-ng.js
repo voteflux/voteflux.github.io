@@ -1,6 +1,9 @@
 var fluxApp = angular.module('fluxApp', []);
 
-fluxApp.controller('FluxController', function($scope, $log, $location){
+fluxApp.controller('FluxController', function($scope, $log, $rootScope){
+  $rootScope._ = _;
+
   var flux = this;
-  this.members = 126;
+
+  flux.members = 126;
 })

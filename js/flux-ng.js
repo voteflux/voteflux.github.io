@@ -6,4 +6,12 @@ fluxApp.controller('FluxController', function($scope, $log, $rootScope){
   var flux = this;
 
   flux.members = 126;
+  flux.incrementMembers = function(){
+    flux.members += 1;
+  }
+
+  flux._showThanks = false;
+  flux.showThanks = function(){
+    flux._showThanks = true;
+  }
 })

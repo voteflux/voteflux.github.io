@@ -36,7 +36,7 @@
           	      <div class="navbar-header">
           	        <button type="button" class="navbar-toggle"></button>
           	        <a class="brand" href="#">
-          	         <img src="img/flux-mark-small.png" width="70" height="70" alt="Flux Logo">Flux</a>
+          	         <img src="img/flux-mark.svg" width="70" height="70" alt="Flux Logo">Flux</a>
           	      </div>
           	      <div class="collapse navbar-collapse">
             	        <ul data-gumshoe class="nav pull-right">
@@ -63,7 +63,7 @@
           	        <h1>The purpose of Flux is to put real democracy in the palm of every hand.</h1>
                     <h3 class='h3'>Flux is an unregistered political party designed to create an accessible, productive, and above all, fair, democracy. We think big, and long term.</h3>
                     <h3 class='h4'>Membership is free, easy, and open to all Australian voters. We are required to have 500 members before we can register.</h3>
-                    <h3 class='h4'>If you would like to see politics disrupted, the best way to help is to become a founding member and share Flux with your friends.</h3>
+                    <h3 class='h4'>If you would like to see politics disrupted, the best ways to help are to become a founding member and share Flux with your friends.</h3>
           	      </div>
           	      <div class="btns">
           	        <a class="btn btn-primary h3 p2" data-scroll href="#membership">Become a Founding Member</a>
@@ -194,92 +194,101 @@
     				<div class="container">
     				  <div class="row">
     				    <div class="col-sm-10 col-sm-offset-1">
-    				      <h3>Become a member</h3>
-    				      <p>To become a founding member of Flux you must fill out the form below.</p>
-    					    <p>Your details will be kept confidential and will only be used for party business.</p>
-    					    <div class="" id='signup-form'>
-                    <form class='sm-col-12' action="https://docs.google.com/forms/d/1TFjmCDQgA-_EDflrh9RPI_Lywp9viF2eOdjrbU4s30Q/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
-                      <label>Your Name (as on the electoral roll)</label>
-                      <input class='field block col-12 mb1' type="text" name="entry.1069132858">
-                      <label>Are you on the Australian Electoral Role?</label>
-                      <select class='field col-3 block' name='entry.485675243'>
-                        <option value='No'>No</option>
-                        <option value='Yes'>Yes</option>
-                      </select>
-                      <label>Your email address:</label>
-                      <input class='field block col-12 mb1' type="text" name="entry.1201109565">
-                      <label>Your residential address as on electoral role</label>
-                      <textarea class='field block col-12 mb1' name="entry.1799101669" rows="5" cols="0"></textarea>
-                      <label>
-                        Your date of birth (required by AEC)
-                      </label>
-                      <div class="select-group">
-                        <select class='field col-3 mb1' name="entry.1115890700_day" class="select">
-                          <option value="">Day</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                          <option value="11">11</option>
-                          <option value="12">12</option>
-                          <option value="13">13</option>
-                          <option value="14">14</option>
-                          <option value="15">15</option>
-                          <option value="16">16</option>
-                          <option value="17">17</option>
-                          <option value="18">18</option>
-                          <option value="19">19</option>
-                          <option value="20">20</option>
-                          <option value="21">21</option>
-                          <option value="22">22</option>
-                          <option value="23">23</option>
-                          <option value="24">24</option>
-                          <option value="25">25</option>
-                          <option value="26">26</option>
-                          <option value="27">27</option>
-                          <option value="28">28</option>
-                          <option value="29">29</option>
-                          <option value="30">30</option>
-                          <option value="31">31</option>
+                  <div ng-show='!flux._showThanks'>
+                    <h3 class='mt0'>Become a member</h3>
+      				      <p>To become a founding member of Flux you must fill out the form below.</p>
+      					    <p>Your details will be kept confidential and will only be used for party business.</p>
+      					    <div class="" id='signup-form'>
+                      <form class='sm-col-12' action="//docs.google.com/forms/d/1TFjmCDQgA-_EDflrh9RPI_Lywp9viF2eOdjrbU4s30Q/formResponse" method="post" target="response_iframe" onsubmit="submitted=true;" ng-submit='flux.showThanks()'>
+                        <label>Your Name (as on the electoral roll)</label>
+                        <input class='field block col-12 mb1' type="text" name="entry.1069132858">
+                        <label>Are you on the Australian Electoral Role?</label>
+                        <select class='field col-3 block' name='entry.485675243'>
+                          <option value='No'>No</option>
+                          <option value='Yes'>Yes</option>
                         </select>
-                        <select class='field col-3 mb1' name="entry.1115890700_month" class="select">
-                          <option value="">Month</option>
-                          <option value="1">January</option>
-                          <option value="2">February</option>
-                          <option value="3">March</option>
-                          <option value="4">April</option>
-                          <option value="5">May</option>
-                          <option value="6">June</option>
-                          <option value="7">July</option>
-                          <option value="8">August</option>
-                          <option value="9">September</option>
-                          <option value="10">October</option>
-                          <option value="11">November</option>
-                          <option value="12">December</option>
-                        </select>
-                        <select class='field col-3 mb1' name="entry.1115890700_year" class="select">
-                          <option value="">Year</option>
-                          <option ng-repeat="i in _.range(2015, 1900, -1) track by $index" value="{{i}}">{{i}}</option>
-                        </select>
-                      </div>
-                      <label>You contact number (we will SMS you before calling)</label>
-                      <input class='block col-12 mb1 field' type="text" name="entry.134473684">
-                      <label>Referred By (Optional) -- How did you hear about Flux?</label>
-                      <input class='block col-12 mb1 field' type='text' name='entry.279410956'>
-                      <div class='center'>
-                        <input class='btn btn-primary p2 h3' type="submit" value="Submit">
-                      </div>
-                    </form>
-                    <iframe style="display:none" name='hidden_iframe'></iframe>
-    				      </div>
-                  <div class="" id='signup-thanks'>
-
+                        <label>Your email address:</label>
+                        <input class='field block col-12 mb1' type="text" name="entry.1201109565">
+                        <label>Your residential address as on electoral role</label>
+                        <textarea class='field block col-12 mb1' name="entry.1799101669" rows="5" cols="0"></textarea>
+                        <label>
+                          Your date of birth (required by AEC)
+                        </label>
+                        <div class="select-group">
+                          <select class='field col-3 mb1' name="entry.1115890700_day" class="select">
+                            <option value="">Day</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                          </select>
+                          <select class='field col-3 mb1' name="entry.1115890700_month" class="select">
+                            <option value="">Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                          </select>
+                          <select class='field col-3 mb1' name="entry.1115890700_year" class="select">
+                            <option value="">Year</option>
+                            <option ng-repeat="i in _.range(2015, 1900, -1) track by $index" value="{{i}}">{{i}}</option>
+                          </select>
+                        </div>
+                        <label>You contact number (we will SMS you before calling)</label>
+                        <input class='block col-12 mb1 field' type="text" name="entry.134473684">
+                        <label>Referred By (Optional) -- How did you hear about Flux?</label>
+                        <input class='block col-12 mb1 field' type='text' name='entry.279410956'>
+                        <div class='center'>
+                          <input class='btn btn-primary p2 h3' type="submit" value="Help Shape The Future (Submit)" ng-click="flux.incrementMembers()">
+                        </div>
+                      </form>
+      				      </div>
+                  </div>
+                  <div class="center" id='signup-thanks' ng-show='flux._showThanks'>
+                    <h3 class='h2'>You're Awesome! Thanks</h3>
+                    <p>Provided everything looks good with the Google form submission below, your membership has been submitted. The live graph should update in a few minutes. If there was something wrong with your submission you will need to fix it now, and submit the form again.</p>
+                    <iframe class='block' name="response_iframe" style='width: 100%; height: 200px;'></iframe>
+                    <h3 class='mt2'>While you're here, why not share us on Facebook or Twitter?</h3>
+                  </div>
+                  <div class="center h2 mt3" id='member-counter'>
+                    {{flux.members}} of 500 members registered
+                    <h4>Live Graph (delayed by a few minutes)</h4>
+                    <iframe style="width:100%; height: 371px;"" seamless="" frameborder="0" scrolling="yes" src="https://docs.google.com/spreadsheets/d/1oODt6m__XMuTT69nekt98ZY6Cl_cWpaQenMrjmLqDmo/pubchart?oid=53928827&amp;format=interactive"></iframe>
                   </div>
     				    </div>
     				  </div>

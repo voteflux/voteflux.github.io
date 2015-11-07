@@ -22,6 +22,7 @@
         <!-- header -->
         <link rel="stylesheet" href="css/header-style.css">
 
+        <!-- Eventually only styles below here should be included... -->
         <link rel='stylesheet' href='css/basscss.min.css'>
     </head>
 
@@ -39,6 +40,11 @@
           	      </div>
           	      <div class="collapse navbar-collapse">
           	        <ul class="nav pull-right">
+                      <li><a href="#why">Why</a></li>
+                      <li><a href="#what">What</a></li>
+                      <li><a href="#how">How</a></li>
+                      <li><a href="#who">Who</a></li>
+                      <li><a href="#features">Features</a></li>
                       <li><a href="#membership">Become a member</a></li>
                       <!-- <li><a href="#for-parties">For Minor Parties</a></li> -->
                       <!-- <li><a href="#for-voters">For Voters</a></li> -->
@@ -55,9 +61,9 @@
           	    <div class="col-sm-8 col-sm-offset-2">
           	      <div class="hero-unit">
           	        <h1>The purpose of Flux is to put real democracy in the palm of every hand.</h1>
-                    <h3 class='h3'>Flux is an unregistered political party designed to create an accessible, productive, and above all, fair, democracy.</h3>
-                    <h3 class='h4'>Membership is free and easy, and open to all Australian voters. We are required to have 500 members before we can register.</h3>
-                    <h3 class='h4'>If you would like to see politics disrupted, the best way to help is to become a founding member and sharing Flux with your friends.</h3>
+                    <h3 class='h3'>Flux is an unregistered political party designed to create an accessible, productive, and above all, fair, democracy. We think big, and long term.</h3>
+                    <h3 class='h4'>Membership is free, easy, and open to all Australian voters. We are required to have 500 members before we can register.</h3>
+                    <h3 class='h4'>If you would like to see politics disrupted, the best way to help is to become a founding member and share Flux with your friends.</h3>
           	      </div>
           	      <div class="btns">
           	        <a class="btn btn-primary h3 p2" href="#membership">Become a Founding Member</a>
@@ -122,7 +128,7 @@
               </div>
           </section>
     			<!-- content-26 -->
-    			<section class="content-26 bg-clouds">
+    			<section class="content-26 bg-clouds" id='features'>
     			<div class="container">
     			  <div class="row">
     			    <div class="col-sm-8 col-sm-offset-2">
@@ -166,15 +172,15 @@
     			  </div>
     			  <div class="row features">
     			    <div class="col-sm-3">
-    			      <img src="../../common-files/icons/Chat@2x.png" alt="" width="100" height="100">
-    			      <h6>Ends Corruption</h6>
-                Under Flux, lobbiests wouldn't need to convince politicians, they would need to convince the people. In this way special interests become directly accountable to the community they affect, and can't elbow their way through.
-    			    </div>
-    			    <div class="col-sm-4 col-sm-offset-1">
     			      <img src="../../common-files/icons/Responsive1@2x.png" alt="" width="100" height="100">
     			      <h6>Encourages Criticism</h6>
                 The ecosystem within Flux encourages a culture of criticism around new policy before it's enacted, and demands that policy options can withstand that criticism.
     			    </div>
+    			    <div class="col-sm-4 col-sm-offset-1">
+    			      <img src="../../common-files/icons/Chat@2x.png" alt="" width="100" height="100">
+    			      <h6>Ends Corruption</h6>
+                Under Flux, lobbiests wouldn't need to convince politicians, they would need to convince the people. In this way special interests become directly accountable to the community they affect, and can't elbow their way through.
+              </div>
     			    <div class="col-sm-3 col-sm-offset-1">
     			      <img src="../../common-files/icons/ps@2x.png" alt="" width="78" height="100">
     			      <h6>Facilitates Conjecture</h6>
@@ -417,11 +423,15 @@
         </div>
 
         <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/javascript">var submitted=false;</script>
+        <script type="text/javascript">
+          var submitted=false;
+        </script>
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/modernizr.custom.js"></script>
         <script src="js/page-transitions.js"></script>
         <script src="js/startup-kit.js"></script>
+        <script src='js/angular.min.js'></script>
+        <script src='js/main-ng.js'
     </body>
 </html>

@@ -234,11 +234,11 @@
                         <textarea class='field block col-12 mb1' name="entry.1799101669" rows="3" cols="0"></textarea>
                         <label>Your date of birth <small>(required by AEC)</small></label>
                         <div class="select-group">
-                          <select class='field col-3 mb1' name="entry.1115890700_day" class="select">
+                          <select class='field col-3 mb1 select' name="entry.1115890700_day">
                             <option value="">Day</option>
                             <option ng-repeat="i in _.range(1, 32) track by $index" value="{{i}}">{{i}}</option>
                           </select>
-                          <select class='field col-3 mb1' name="entry.1115890700_month" class="select">
+                          <select class='field col-3 mb1 select' name="entry.1115890700_month">
                             <option value="">Month</option>
                             <option value="1">January</option>
                             <option value="2">February</option>
@@ -253,7 +253,7 @@
                             <option value="11">November</option>
                             <option value="12">December</option>
                           </select>
-                          <select class='field col-3 mb1' name="entry.1115890700_year" class="select">
+                          <select class='field col-3 mb1 select' name="entry.1115890700_year">
                             <option value="">Year</option>
                             <option ng-repeat="i in _.range(2015, 1900, -1) track by $index" value="{{i}}">{{i}}</option>
                           </select>
@@ -325,11 +325,9 @@
         <script src='js/angular.min.js'></script>
         <script src='js/flux-ng.js'></script>
         <script src='js/smooth-scroll.min.js'></script>
-        <script src='js/gumshoe.min.js'></script>
         <script type="text/javascript">
           var submitted=false;
           smoothScroll.init();
-          gumshoe.init();
         </script>
     </body>
 </html>

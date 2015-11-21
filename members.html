@@ -6,80 +6,84 @@
     <link rel='stylesheet' href='css/basscss.min.css'>
 </head>
 <body ng-controller="FluxController as flux">
-    <div id="error-msg" ng-show="flux.errorMsg.length > 0">
-        <h3 class="red">Error</h3>
-        <textarea>{{flux.errorMsg}}</textarea>
-    </div>
-
-    <div ng-show="flux.loggedIn && flux.setMemberDetails || flux.debug">
-        <h1>Set Member Details</h1>
-
-        <form class="sm-col-12">
-            <label>Email:</label>
-            <input ng-model="flux.email" type="text" id="member-email" class="block col-12 mb1 field">
-
-            <label>Full Name: <small>(as on the electoral roll)</small></label>
-            <input ng-model="flux.name" type="text" id="member-name" class="block col-12 mb1 field">
-
-            <label>Address: <small>(as on the electoral roll)</small></label>
-            <textarea ng-model="flux.address" id="member-address" class="block col-12 mb1 field"></textarea>
-
-            <label>Are you on the Australian Electoral Role?</label>
-            <select class='field col-3 block' id='member-aec-roll' ng-model="flux.onAECRoll">
-                <option value='No'>No</option>
-                <option value='Yes'>Yes</option>
-            </select>
-
-            <label>Your date of birth <small>(required by AEC)</small></label>
-            <div class="select-group">
-                <select class='field col-3 mb1 select' id="member-dob-day" ng-model="flux.dobDay">
-                    <option value="">Day</option>
-                    <option ng-repeat="i in _.range(1, 32) track by $index" value="{{i}}">{{i}}</option>
-                </select>
-                <select class='field col-3 mb1 select' id="member-dob-month" ng-model="flux.dobMonth">
-                    <option value="">Month</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                </select>
-                <select class='field col-3 mb1 select' id="member-dob-year" ng-model="flux.dobYear">
-                    <option value="">Year</option>
-                    <option ng-repeat="i in _.range(2015, 1900, -1) track by $index" value="{{i}}">{{i}}</option>
-                </select>
+    <div class="container">
+        <div class="clearfix">
+            <div id="error-msg" ng-show="flux.errorMsg.length > 0">
+                <h3 class="red">Error</h3>
+                <textarea>{{flux.errorMsg}}</textarea>
             </div>
 
-            <label>You contact number <small>(we will SMS you before calling)</small></label>
-            <input class='block col-12 mb1 field' type="text" id="member-contact-number" ng-model="flux.contactNumber">
+            <div id="set-member-details" ng-show="flux.loggedIn && flux.setMemberDetails || flux.debug">
+                <h1>Set Member Details</h1>
 
-            <label>Referred By <small>(Optional, How did you hear about Flux?)</small></label>
-            <input class='block col-12 mb1 field' type='text' id="member-referred-by" ng-model="flux.referredBy">
+                <form class="sm-col-12">
+                    <label>Email:</label>
+                    <input ng-model="flux.email" type="text" id="member-email" class="block col-12 mb1 field">
 
-            <label>Comments / Notes <small>(Optional, Anything you'd like to add, about yourself, us, or anything, really.)</small></label>
-            <textarea class='field block col-12 mb1' rows="3" cols="0" id="member-comment" ng-model="flux.memberComment"></textarea>
+                    <label>Full Name: <small>(as on the electoral roll)</small></label>
+                    <input ng-model="flux.name" type="text" id="member-name" class="block col-12 mb1 field">
 
-            <div class='center'>
-                <input class='btn btn-primary' type="submit" value="Update Membership Details" ng-click="">
+                    <label>Address: <small>(as on the electoral roll)</small></label>
+                    <textarea ng-model="flux.address" id="member-address" class="block col-12 mb1 field"></textarea>
+
+                    <label>Are you on the Australian Electoral Role?</label>
+                    <select class='field col-3 block' id='member-aec-roll' ng-model="flux.onAECRoll">
+                        <option value='No'>No</option>
+                        <option value='Yes'>Yes</option>
+                    </select>
+
+                    <label>Your date of birth <small>(required by AEC)</small></label>
+                    <div class="select-group">
+                        <select class='field col-3 mb1 select' id="member-dob-day" ng-model="flux.dobDay">
+                            <option value="">Day</option>
+                            <option ng-repeat="i in _.range(1, 32) track by $index" value="{{i}}">{{i}}</option>
+                        </select>
+                        <select class='field col-3 mb1 select' id="member-dob-month" ng-model="flux.dobMonth">
+                            <option value="">Month</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select class='field col-3 mb1 select' id="member-dob-year" ng-model="flux.dobYear">
+                            <option value="">Year</option>
+                            <option ng-repeat="i in _.range(2015, 1900, -1) track by $index" value="{{i}}">{{i}}</option>
+                        </select>
+                    </div>
+
+                    <label>You contact number <small>(we will SMS you before calling)</small></label>
+                    <input class='block col-12 mb1 field' type="text" id="member-contact-number" ng-model="flux.contactNumber">
+
+                    <label>Referred By <small>(Optional, How did you hear about Flux?)</small></label>
+                    <input class='block col-12 mb1 field' type='text' id="member-referred-by" ng-model="flux.referredBy">
+
+                    <label>Comments / Notes <small>(Optional, Anything you'd like to add, about yourself, us, or anything, really.)</small></label>
+                    <textarea class='field block col-12 mb1' rows="3" cols="0" id="member-comment" ng-model="flux.memberComment"></textarea>
+
+                    <div class='center'>
+                        <input class='btn btn-primary' type="submit" value="Update Membership Details" ng-click="">
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
 
-    <div ng-show="!flux.loggedIn">
-        <h1>Become a member:</h1>
+            <div id="register-or-login" ng-show="!flux.loggedIn">
+            <h1>Become a member:</h1>
 
-        <form>
-            <label for="reg-email">Email:</label>
-            <input id="reg-email" type="text" class="field">
-            <button class="btn btn-primary" id="reg-email-btn-next" ng-click="flux.regFromEmail()">Next</button>
-        </form>
+            <form>
+                <label for="reg-email">Email:</label>
+                <input id="reg-email" type="text" class="field">
+                <button class="btn btn-primary" id="reg-email-btn-next" ng-click="flux.regFromEmail()">Next</button>
+            </form>
+        </div>
+        </div>
     </div>
 
     <script src="/js/angular.min.js"></script>

@@ -12,7 +12,6 @@ app.controller('FluxController', function($scope, $log, $rootScope, $http, $loca
     flux.members = 125;
     flux._showThanks = false;
     flux.errorMsg = '';
-    flux.setMemberDetails = false;
     flux.debug = false;
     flux.valid_regions = [];
     flux.set_password = false;

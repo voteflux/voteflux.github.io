@@ -28,7 +28,7 @@
                     <textarea>{{flux.errorMsg}}</textarea>
                 </div>
 
-                <div id="set-member-details" ng-show="flux.loggedIn && flux.setMemberDetails || flux.debug">
+                <div id="set-member-details" ng-show="flux.loggedIn || flux.debug">
                     <h1>Member Details <small>(Logged in as: {{flux.username}} / <a class="btn btn-primary p0 h6" ng-click="flux.logOut()">Log Out</a>)</small></h1>
 
                     <h3>These must be filled in to be a valid member.</h3>

@@ -7,17 +7,20 @@
     <link rel='stylesheet' href='css/basscss.min.css'>
     <link href="css/toastr.min.css" rel="stylesheet"/>
     <link rel='stylesheet' href='css/spinners.css'>
+
+    <link rel="stylesheet" href="css/members.css">
 </head>
 <body ng-controller="FluxController as flux">
     <div ng-show='flux._loggingIn' class="absolute bg-aqua block" style="width: 100%; height: 100%;">
         <h1 class="block px2 center" ng-show="false">Loading</h1>
-        <h1 class="block px2 center display-none" ng-show="true" id="login-heading">Logging In</h1>
+        <h1 class="block px2 center" ng-cloak id="login-heading">Logging In</h1>
         <div class="sk-folding-cube">
             <div class="sk-cube1 sk-cube"></div>
             <div class="sk-cube2 sk-cube"></div>
             <div class="sk-cube4 sk-cube"></div>
             <div class="sk-cube3 sk-cube"></div>
         </div>
+        <a class="btn btn-primary p1 h6 bottom-0" ng-click="flux.logOut();">Log Out</a>
     </div>
 
     <div class="container">
@@ -29,7 +32,7 @@
                 </div>
 
                 <div id="set-member-details" ng-show="flux.loggedIn || flux.debug">
-                    <h1>Member Details <small>(Logged in as: {{flux.username}} / <a class="btn btn-primary p0 h6" ng-click="flux.logOut()">Log Out</a>)</small></h1>
+                    <h1>Member Details <small>(Logged in as: {{flux.username}} / <a class="btn btn-primary p1 h6" ng-click="flux.logOut()">Log Out</a>)</small></h1>
 
                     <h3>These must be filled in to be a valid member.</h3>
 

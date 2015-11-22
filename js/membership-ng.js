@@ -104,6 +104,7 @@ app.controller('FluxController', function($scope, $log, $rootScope, $http, $loca
         flux.user = undefined;
         flux.username = undefined;
         delete $localStorage.sessionToken;
+        flux.finishedLoggingIn();
     }
 
     if ($localStorage.sessionToken !== undefined){

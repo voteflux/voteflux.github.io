@@ -186,6 +186,7 @@ app.controller('FluxController', function($scope, $log, $rootScope, $http, $loca
     //
 
     flux.saveUserDetails = function() {
+        toastr.info("User " + flux.username + " details saving.", "Saving..");
         flux.dob = new Date(flux.dobYear, flux.dobMonth - 1, flux.dobDay, 0, 0, 0, 0);
         $log.log(flux.dob);
         if (flux.onAECRoll != 'Yes') // if we are marked as not being on the roll don't include AUS as a region
@@ -195,9 +196,9 @@ app.controller('FluxController', function($scope, $log, $rootScope, $http, $loca
         else if (!_.includes(flux.valid_regions, 'AUS')) // if we are on the roll and don't have 'AUS' in our list, add it
             flux.valid_regions.push('AUS');
         $log.log(flux.valid_regions);
+        flux.username = flux.email;
         _.map(user_fields, _.partial(flux._setParseObjPropFromFlux, flux.user));
-        flux.user.save();
-        toastr.success("User " + flux.username + " details saved.", "Saved!");
+        flux.user.save().then(function(user){ toastr.success("User " + flux.username + " details saved.", "Saved!"); }, flux.handleError);
     };
 
     //

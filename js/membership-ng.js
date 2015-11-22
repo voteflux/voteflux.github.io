@@ -41,8 +41,9 @@ app.controller('FluxController', function($scope, $log, $rootScope, $http, $loca
         $log.log(error);
     };
     flux._showError = function(error){
-        flux.errorMsg = JSON.stringify(error);
-    }
+        flux.errorMsg = typeof error === 'object' ? JSON.stringify(error) : error;
+        toastr.error(flux.errorMsg);
+    };
 
     //
     // functions: legacy
@@ -115,7 +116,7 @@ app.controller('FluxController', function($scope, $log, $rootScope, $http, $loca
     //
 
     flux._setProperty = function(property, value){
-        $log.log('Setting flux.' + property + ' as ' + value.toString());
+        $log.log('Setting flux.' + property + ' as ' + value);
         flux[property] = value;
     };
     flux._setPropertyFromParseObj = function(obj, property){
@@ -135,10 +136,15 @@ app.controller('FluxController', function($scope, $log, $rootScope, $http, $loca
     flux._setVarsFromUser = function(user){
         flux._setPropertiesFromParseObj(user, user_fields);
         flux.onAECRoll = $.inArray('AUS', flux.valid_regions) !== -1 ? 'Yes' : 'No';
-        $log.log($.inArray('AUS', flux.valid_regions));
-        flux.dobDay = flux.dob.getDate().toString();
-        flux.dobMonth = (flux.dob.getMonth() + 1).toString(); // offset for js values of month
-        flux.dobYear = flux.dob.getFullYear().toString();
+        try {
+            flux.dobDay = flux.dob.getDate().toString();
+            flux.dobMonth = (flux.dob.getMonth() + 1).toString(); // offset for js values of month
+            flux.dobYear = flux.dob.getFullYear().toString();
+        } catch(err) {
+            flux.dobDay = "1";
+            flux.dobMonth = "1";
+            flux.dobYear = "1999";
+        }
     };
 
 

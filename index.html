@@ -325,11 +325,18 @@
         <script src="js/vendor/toastr.min.js"></script>
         <script src='js/lodash.min.js'></script>
         <script src='js/angular.min.js'></script>
+        <script src='js/common.js'></script>
         <script src='js/flux-ng.js'></script>
         <script src='js/smooth-scroll.min.js'></script>
+        <script src="https://d26b395fwzu5fz.cloudfront.net/3.3.0/keen.min.js" type="text/javascript"></script>
         <script type="text/javascript">
-          var submitted=false;
-          smoothScroll.init();
+            var submitted=false;
+            smoothScroll.init();
+            var keenClient = new Keen({
+              projectId: "5657164c672e6c472d1ad827", // String (required always)
+              writeKey: "53137495b83e08acbdfb67b07d6ca4b81f9d457551255602d0260d2700e58feb02e78a19cfac8bfc6c8ac6e37f6b64f55c1d2acd75ae9b370c45d57fb8aa0df4e111a34a5b4817b17e2819005892b8b30af8e939a8e3cf22164d8fac8755aff934bdd39cfabd63c5e57c9f0ab9f08713",   // String (required for sending data)
+            });
+            keenClient.addEvent('page_load', {'ref': document.referrer});
         </script>
         <!-- Google Tag Manager -->
         <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-ND94TG"

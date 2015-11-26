@@ -188,7 +188,11 @@ app.controller('FluxController', function($scope, $log, $rootScope, $http, $loca
 
     flux.saveUserDetails = function() {
         toastr.info("User " + flux.username + " details saving.", "Saving..");
-        flux.dob = new Date(flux.dobYear, flux.dobMonth - 1, flux.dobDay, 0, 0, 0, 0);
+        flux.dob = new Date();
+        flux.dob.setUTCDate(flux.dobDay);
+        flux.dob.setUTCFullYear(flux.dobYear);
+        flux.dob.setUTCMonth(flux.dobMonth - 1);
+        flux.dob.setUTCHours(0);
         $log.log(flux.dob);
         if (flux.onAECRoll != 'Yes') // if we are marked as not being on the roll don't include AUS as a region
             _.remove(flux.valid_regions, function (t) {

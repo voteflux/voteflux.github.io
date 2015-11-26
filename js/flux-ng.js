@@ -45,6 +45,8 @@ fluxApp.controller('FluxController', function($scope, $log, $rootScope, $http){
     dob.setUTCDate(getEntry('entry.1115890700_day'));
     dob.setUTCMonth(parseInt(getEntry('entry.1115890700_month')) - 1);
     dob.setUTCFullYear(getEntry('entry.1115890700_year'));
+    dob.setUTCHours(0);
+    dob.setUTCMinutes(0);
     var to_send = {
       'name': getEntry('entry.1069132858'),
       'valid_regions': getEntry('entry.485675243') === "Yes" ? ['AUS'] : [],

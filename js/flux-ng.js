@@ -55,7 +55,8 @@ fluxApp.controller('FluxController', function($scope, $log, $rootScope, $http){
       'dob': dob,
       'contact_number': getEntry('entry.134473684'),
       'referred_by': getEntry('entry.279410956'),
-      'member_comment': getEntry('entry.1861406557')
+      'member_comment': getEntry('entry.1861406557'),
+      'session_uuid': flux._uuid
     };
 
     $log.log(to_send);
@@ -76,4 +77,8 @@ fluxApp.controller('FluxController', function($scope, $log, $rootScope, $http){
   flux.showThanks = function(){
     flux._showThanks = true;
   };
+
+  flux._uuid = createGuid();
+
+  keenClient.addEvent('page_load', {'ref': document.referrer, 'uuid': flux._uuid});
 });

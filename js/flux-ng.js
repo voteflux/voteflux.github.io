@@ -78,6 +78,14 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         flux._showThanks = true;
     };
 
+    flux.btnClickLog = function(btnRef){
+        if (!flux.debug) {
+            keenClient.addEvent('btn_click', {'btn': btnRef});
+        } else {
+            $log.log('Button Click: ' + btnRef);
+        }
+    };
+
     flux._uuid = createGuid();
 
     keenClient.addEvent('page_load', {'ref': document.referrer, 'uuid': flux._uuid, 'href': document.location.href});

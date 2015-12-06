@@ -965,7 +965,7 @@ startupKit.uiKitContent.content30 = function() {
         }
     });
 
-//};
+};
 ///* Content 31*/
 //startupKit.uiKitContent.content31 = function() {
 //    (function(el) {

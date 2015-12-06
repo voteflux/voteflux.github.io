@@ -8,4 +8,5 @@
             rgba(0, 0, 0, 0.7)
     ), url("/img/bg/photo-sydney-top-1.jpeg");
     background-size: cover;
+    min-height: 100vh;
 }

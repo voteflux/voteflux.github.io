@@ -1,0 +1,11 @@
+.h1-big {
+    font-size: 4rem !important;
+}
+
+.bg-sydney-1 {
+    background-image: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+    ), url("/img/bg/photo-sydney-top-1.jpeg");
+    background-size: cover;
+}

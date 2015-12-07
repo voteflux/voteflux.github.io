@@ -10,3 +10,7 @@
     background-size: cover;
     min-height: 100vh;
 }
+
+.lh1 { line-height: 1rem; }
+.lh2 { line-height: 2rem; }
+.lh3 { line-height: 3rem; }

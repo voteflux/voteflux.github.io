@@ -11,6 +11,7 @@
     min-height: 100vh;
 }
 
-.lh1 { line-height: 1rem; }
-.lh2 { line-height: 2rem; }
-.lh3 { line-height: 3rem; }
+.lh1 { line-height: 1rem !important; }
+.lh2 { line-height: 2rem !important; }
+.lh3 { line-height: 3rem !important; }
+.lh4 { line-height: 4rem !important; }

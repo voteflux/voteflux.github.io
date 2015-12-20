@@ -79,7 +79,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
 
     flux.btnClickLog = function(btnRef){
         if (!flux.debug) {
-            keenClient.addEvent('btn_click', {'btn': btnRef});
+            keenClient.addEvent('btn_click', {'btn': btnRef, 'uuid': flux._uuid});
         } else {
             $log.log('Button Click: ' + btnRef);
         }

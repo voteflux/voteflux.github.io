@@ -9,3 +9,19 @@ var createGuid = function () {
         return v.toString(16);
     });
 }
+
+// http://stackoverflow.com/questions/5448545/how-to-retrieve-get-parameters-from-javascript
+function getParam(val) {
+    var result = "Not found",
+        tmp = [];
+    location.search
+        //.replace ( "?", "" )
+        // this is better, there might be a question mark inside
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === val) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}

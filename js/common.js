@@ -12,7 +12,7 @@ var createGuid = function () {
 
 // http://stackoverflow.com/questions/5448545/how-to-retrieve-get-parameters-from-javascript
 function getParam(val) {
-    var result = "Not found",
+    var result = undefined,
         tmp = [];
     location.search
         //.replace ( "?", "" )

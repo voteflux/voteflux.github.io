@@ -430,16 +430,16 @@
                                            ng-click="flux.incrementMembers()">
                                 </div>
                             </form>
+                            <iframe class='block' name="response_iframe" ng-hide="flux._showThanks" style="display:none"></iframe>
                         </div>
                     </div>
                     <div class="center" id='signup-thanks' ng-show='flux._showThanks'>
                         <h3 class='h2'>You're Awesome! Thanks</h3>
-
-                        <p>Provided everything looks good with the Google form submission below, your membership has
-                            been submitted. The live graph should update in a few minutes. If there was something wrong
-                            with your submission you will need to fix it now, and submit the form again.</p>
-                        <iframe class='block' name="response_iframe" style='width: 100%; height: 200px;'></iframe>
-                        <h3 class='mt2'>While you're here, why not share us on Facebook or Twitter?</h3>
+                        <h3 class='mt2'>While you're here, why not share us on
+                            <a href="https://www.facebook.com/share.php?u=https://voteflux.org" target="_blank">Facebook</a>
+                            or
+                            <a href="https://twitter.com/intent/tweet?text=I just joined Flux! Bringing the sharing economy to politics. Our Democracy. Finally.&url=https://voteflux.org&hashtags=auspol,voteflux&source=webclient" target="_blank">Twitter</a>?
+                        </h3>
                     </div>
                     <div class="center h2 mt3" id='member-counter'>
                         {{flux.members}} of 500 members registered

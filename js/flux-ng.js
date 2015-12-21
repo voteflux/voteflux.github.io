@@ -18,12 +18,11 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         return "https://api.voteflux.org/" + path;
     };
 
-    flux.members = 125;
+    flux.members = 150;
     flux.incrementMembers = function () {
         flux.members += 1;
     };
     flux.loadMembers = function () {
-        // use cors.io proxy to get around cors
         $http.get(flux.api('getinfo'))
             .success(function (data) {
                 flux.members = data['n_members'];

@@ -55,7 +55,8 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
             'contact_number': getEntry('entry.134473684'),
             'referred_by': getEntry('entry.279410956'),
             'member_comment': getEntry('entry.1861406557'),
-            'session_uuid': flux._uuid
+            'session_uuid': flux._uuid,
+            'href': document.location.href
         };
 
         $log.log(to_send);

@@ -88,10 +88,19 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
 
     flux._uuid = createGuid();
 
-    keenClient.addEvent('page_load', {'ref': document.referrer, 'uuid': flux._uuid, 'href': document.location.href});
+    if(!flux.debug) {
+        keenClient.addEvent('page_load', {
+            'ref': document.referrer,
+            'uuid': flux._uuid,
+            'href': document.location.href
+        });
+    }
 
     var refereree = getParam('r');
     if(refereree){
-        $("[name='entry.279410956']").val(refereree);
+        var refInput = $("#ref-input");
+        refInput.val(refereree);
+        refInput.hide();
+        $("#ref-label").hide();
     }
 });

@@ -15,3 +15,6 @@
 .lh2 { line-height: 2rem !important; }
 .lh3 { line-height: 3rem !important; }
 .lh4 { line-height: 4rem !important; }
+
+/*get-swap-vote image continer*/
+.gsw-img-c { min-height: 16rem; }

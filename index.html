@@ -32,6 +32,7 @@
     <link rel='stylesheet' href='css/basscss.min.css'>
     <link rel="stylesheet" href="css/toastr.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/bigfoot-default.css">
 
     <!-- Facebook Pixel Code -->
     <script>
@@ -108,7 +109,7 @@
 
     <section class="py4 p1">
         <div class="container" id="direct-plus">
-            <h1 class="center">Quick Overview of Flux</h1>
+            <h1 class="center">Quick Overview of Voting in Flux</h1>
             <div class="row">
                 <div class="col-sm-4">
                     <h2>1. GET</h2>
@@ -128,7 +129,11 @@
                                 <img src="/img/direct-plus/noun_aus_black.svg"></div>
                         </div>
                     </div>
-                    <p>The first step is distributing votes. Any seats held by Flux are divided among all participants (regular voters and other parties) as fairly as possible for each issue. You receive 1 vote for each bill before Parliament.</p>
+                    <p>The first step
+                        <sup id="fnref:1">
+                            <a href="#fn:1" rel="footnote">1</a>
+                        </sup>
+                        is distributing votes. Any seats held by Flux are divided among all participants (regular voters and other parties) as fairly as possible for each issue. You receive 1 vote for each bill before Parliament.</p>
                 </div>
                 <div class="col-sm-4">
                     <h2>2. SWAP</h2>
@@ -595,6 +600,18 @@
         </div>
     </section>
 
+    <section id="footnotes">
+        <div class="container">
+            <div class="footnotes">
+                <ol>
+                    <li class="footnote" id="fn:1">
+                        <p>footnote.<a href="#fnref:1" title="return to article"> ↩</a><p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
     <!-- footer-11 -->
     <footer class="footer-11">
         <div class="additional-links">
@@ -618,6 +635,7 @@
 <script src="js/startup-kit.js"></script>
 <!-- Added post template -->
 <script src="js/vendor/toastr.min.js"></script>
+<script src="js/vendor/bigfoot.min.js"></script>
 <script src='js/lodash.min.js'></script>
 <script src='js/angular.min.js'></script>
 <script src='js/common.js'></script>
@@ -646,6 +664,7 @@
 <script type="text/javascript">
     var submitted = false;
     smoothScroll.init();
+    $.bigfoot();
     var keenClient = new Keen({
         projectId: "5657164c672e6c472d1ad827", // String (required always)
         writeKey: "53137495b83e08acbdfb67b07d6ca4b81f9d457551255602d0260d2700e58feb02e78a19cfac8bfc6c8ac6e37f6b64f55c1d2acd75ae9b370c45d57fb8aa0df4e111a34a5b4817b17e2819005892b8b30af8e939a8e3cf22164d8fac8755aff934bdd39cfabd63c5e57c9f0ab9f08713",   // String (required for sending data)

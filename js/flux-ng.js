@@ -88,14 +88,6 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
 
     flux._uuid = createGuid();
 
-    if(!flux.debug) {
-        keenClient.addEvent('page_load', {
-            'ref': document.referrer,
-            'uuid': flux._uuid,
-            'href': document.location.href
-        });
-    }
-
     var referrer = getParam('r');
 
     if(referrer === undefined){
@@ -111,5 +103,16 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         refInput.val(referrer);
         refInput.hide();
         $("#ref-label").hide();
+    }
+
+    flux.referrer = referrer;
+
+    if(!flux.debug) {
+        keenClient.addEvent('page_load', {
+            'ref': document.referrer,
+            'uuid': flux._uuid,
+            'href': document.location.href,
+            'referrer': flux.referrer
+        });
     }
 });

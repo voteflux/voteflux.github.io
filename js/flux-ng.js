@@ -96,10 +96,19 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         });
     }
 
-    var refereree = getParam('r');
-    if(refereree){
+    var referrer = getParam('r');
+
+    if(referrer === undefined){
+        utmSource = getParam('utm_source');
+        utmCampaign = getParam('utm_campaign');
+        if(utmSource != undefined && utmCampaign != undefined){
+            referrer = utmSource + "-" + utmCampaign;
+        }
+    }
+
+    if(referrer){
         var refInput = $("#ref-input");
-        refInput.val(refereree);
+        refInput.val(referrer);
         refInput.hide();
         $("#ref-label").hide();
     }

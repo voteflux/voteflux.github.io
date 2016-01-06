@@ -74,6 +74,8 @@
                             <li><a data-scroll href="#who">Who</a></li>
                             <li><a data-scroll href="#features">Features</a></li>
                             <li><a data-scroll href="#membership">Become a member</a></li>
+                            <li><a data-scroll href="#faq">FAQ</a></li>
+
                             <!-- <li><a data-scroll href="#for-parties">For Minor Parties</a></li> -->
                             <!-- <li><a data-scroll href="#for-voters">For Voters</a></li> -->
                         </ul>
@@ -113,6 +115,12 @@
         <div class="container" id="direct-plus">
             <h1 class="center">Quick Overview of Voting in Flux</h1>
             <h3 class="center">Flux will change politics forever by connecting Australians directly into Parliament.</h3>
+            <p class="center">
+                Flux, as a party, is a layer for the redistribution of political power.
+                When a Flux candidate is elected they become a gateway for voters to directly
+                influence parliament. Unlike other representatives, Flux candidates are not autonomous,
+                and their votes in parliament are determined wholly by Flux participants.
+            </p>
             <div class="row">
                 <div class="col-sm-4">
                     <h2>1. GET</h2>
@@ -143,7 +151,7 @@
                             </div>
                         </div>
                     </div>
-                    <p>Second, you (and other voters) are free to swap votes with each other, allowing you to accumulate votes for issues <i>you care about</i>. Flux will automate away all the nitty-gritty to make this as simple and seamless as possible. This is where the magic happens.</p>
+                    <p>Second, you (and other participants) are free to swap votes with each other, allowing you to accumulate votes for issues <i>you care about</i>. Flux will automate away all the nitty-gritty to make this as simple and seamless as possible. This is where the magic happens.</p>
                 </div>
                 <div class="col-sm-4">
                     <h2>3. VOTE</h2>
@@ -163,7 +171,7 @@
                                 <img src="/img/direct-plus/noun_aus_black.svg"></div>
                         </div>
                     </div>
-                    <p>The last step is the actual voting. You can vote yes, no, or somewhere in between. Officials elected on behalf of Flux then relay these votes proportionally to Parliament.</p>
+                    <p>The last step is the actual voting. Participants can vote yes, no, or somewhere in between. Officials elected on behalf of Flux then relay these votes proportionally to Parliament.</p>
                 </div>
             </div>
             <div class="row p1">
@@ -171,7 +179,7 @@
                 <p>
                     <b>Give your votes to someone trustworthy.</b> In Flux, nobody will force you to vote. What you might find worthwhile, though,
                     is to give your votes to a community leader, another political party (they can also participate in Flux), a friend, or maybe all
-                    to one cause (like a charity).
+                    to one cause (like a charity, or activist organisation).
                 </p>
                 <p>
                     <b>Save your votes over time.</b> Because everyone is free to swap votes, you are also free to save your votes over time.
@@ -223,6 +231,9 @@
                         equal say on everything. Rather, Flux aims to solve particular problems by enabling those who
                         are particularly well suited to solve that problem.
                     </p>
+                    <p>
+                        Flux is designed to produce the best policy above all else.
+                    </p>
                 </div>
             </div>
             <div id="how" class="row py3 mt3 active">
@@ -241,28 +252,21 @@
                         Westminster system.
                         Furthermore, it allows projects of any length to be undertaken without being interrupted by the
                         changing political landscape. Long term policy can be worked towards by dedicated individuals
-                        even if the time-frame is well beyond a term. Short term innovative policy, or updates to past
-                        policy can be undertaken with similar ease as needed, without requiring prior political
+                        even if the time-frame is well beyond a normal 3 year election cycle. Short term innovative policy,
+                        or updates to past
+                        policy can be made quickly with similar ease, without requiring prior political
                         interest. Provided the policy is of high quality, Flux is designed to make this as simple and
                         painless as possible.
                     </p>
 
                     <p>
                         Neutrality and openness to alternate ideas are crucial to Flux operating as a platform that
-                        everyone can use, in the same way the Westminster system doesn't dictate which policies are
-                        acceptable. Flux has no policies of its own in order to protect the integrity of this platform.
+                        everyone can use. In the same way the Westminster system doesn't dictate which policies are
+                        acceptable, Flux doesn't have any policies of its own (besides parliamentary reform).
                     </p>
                 </div>
             </div>
-            <!-- <div id='why-work' class='row py3 mt3'>
-              <div class='number'>4</div>
-              <div class='col-sm-8 col-sm-offset-2'>
-                <h3>Why will Flux work?</h3>
-                <p>
 
-                </p>
-              </div>
-            </div> -->
             <div id="who" class="row py3 mt3 active">
                 <div class="number">4</div>
                 <!-- <div class="number">5</div> -->
@@ -445,30 +449,30 @@
                                 <label>Your Name
                                     <small>(as on the electoral roll)</small>
                                 </label>
-                                <input class='field block col-12 mb1' type="text" name="entry.1069132858">
+                                <input class='field block col-12 mb1' type="text" name="entry.1069132858" required placeholder="Name">
                                 <label>Are you on the Australian Electoral Role?</label>
-                                <select class='field col-3 block' name='entry.485675243'>
+                                <select class='field col-3 block' name='entry.485675243' required>
+                                    <option value=""></option>
                                     <option value='No'>No</option>
                                     <option value='Yes'>Yes</option>
                                 </select>
                                 <label>Your email address:</label>
-                                <input class='field block col-12 mb1' type="text" name="entry.1201109565">
+                                <input class='field block col-12 mb1' type="text" name="entry.1201109565" required>
                                 <label>Your residential address
                                     <small>(as on electoral role)</small>
                                 </label>
-                                <textarea class='field block col-12 mb1' name="entry.1799101669" rows="3"
-                                          cols="0"></textarea>
+                                <textarea class='field block col-12 mb1' name="entry.1799101669" rows="3" cols="0" required></textarea>
                                 <label>Your date of birth
                                     <small>(required by AEC)</small>
                                 </label>
 
                                 <div class="select-group">
-                                    <select class='field col-3 mb1 select' name="entry.1115890700_day">
+                                    <select class='field col-3 mb1 select' name="entry.1115890700_day" required>
                                         <option value="">Day</option>
                                         <option ng-repeat="i in _.range(1, 32) track by $index" value="{{i}}">{{i}}
                                         </option>
                                     </select>
-                                    <select class='field col-3 mb1 select' name="entry.1115890700_month">
+                                    <select class='field col-3 mb1 select' name="entry.1115890700_month" required>
                                         <option value="">Month</option>
                                         <option value="1">January</option>
                                         <option value="2">February</option>
@@ -483,7 +487,7 @@
                                         <option value="11">November</option>
                                         <option value="12">December</option>
                                     </select>
-                                    <select class='field col-3 mb1 select' name="entry.1115890700_year">
+                                    <select class='field col-3 mb1 select' name="entry.1115890700_year" required>
                                         <option value="">Year</option>
                                         <option ng-repeat="i in _.range(2015, 1900, -1) track by $index" value="{{i}}">
                                             {{i}}
@@ -493,7 +497,7 @@
                                 <label>You contact number
                                     <small>(we will SMS you before calling)</small>
                                 </label>
-                                <input class='block col-12 mb1 field' type="text" name="entry.134473684">
+                                <input class='block col-12 mb1 field' type="text" name="entry.134473684" required>
                                 <label id="ref-label">Referred By
                                     <small>(Optional, How did you hear about Flux?)</small>
                                 </label>
@@ -531,6 +535,30 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py4 p1">
+        <div class="container">
+            <h1>FAQ</h1>
+            <h3>Is membership free?</h3>
+            <p>
+                Yes. Membership is free forever. We don't believe charging a membership fee is necessary, and are working on other
+                methods of funding to ensure we can provide open access to democracy to as many people as possible.
+            </p>
+            <h3>Does Flux have a platform?</h3>
+            <p>
+                Yes and no. We do have a platform of parliamentary reform, and we deliberately do not have any other platforms.
+                We only seek to change the way decisions are made, not to actually make the decisions ourselves.
+                The vision of Flux is not to be the source of new policy.
+                The vision is to help the best policy be written.
+
+            </p>
+            <h3>Are membership details confidential?</h3>
+            <p>
+                Yes. Membership details will be exclusively used for party business, and never sold or willfully disclosed.
+                Currently only Nathan and Max have access, though this will expand slightly as Flux proceeds through the registration process.
+            </p>
         </div>
     </section>
 

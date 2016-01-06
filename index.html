@@ -39,16 +39,17 @@
 
     <!-- Facebook Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','//connect.facebook.net/en_US/fbevents.js');
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                document,'script','//connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '911761635543957');
-    fbq('track', "PageView");
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=911761635543957&ev=PageView&noscript=1"/></noscript>
+        fbq('init', '732742723527431');
+        fbq('track', "PageView");</script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=732742723527431&ev=PageView&noscript=1"
+    /></noscript>
     <!-- End Facebook Pixel Code -->
 </head>
 
@@ -675,13 +676,17 @@
 <!-- End Google Tag Manager -->
 
 
+<!-- Start JS for page -->
 <script type="text/javascript">
     var submitted = false;
+
     smoothScroll.init();
+
     var keenClient = new Keen({
         projectId: "5657164c672e6c472d1ad827", // String (required always)
         writeKey: "53137495b83e08acbdfb67b07d6ca4b81f9d457551255602d0260d2700e58feb02e78a19cfac8bfc6c8ac6e37f6b64f55c1d2acd75ae9b370c45d57fb8aa0df4e111a34a5b4817b17e2819005892b8b30af8e939a8e3cf22164d8fac8755aff934bdd39cfabd63c5e57c9f0ab9f08713",   // String (required for sending data)
     });
+
     function submitForm(){
         submitted = true;
         console.log("submission recieved");
@@ -692,7 +697,7 @@
             eventAction: 'Submission',
         });
 
-        fbq('track', 'CompleteRegistration');
+        fbq('track', 'Complete Registration');
     }
 
 </script>

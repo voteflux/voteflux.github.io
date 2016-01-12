@@ -60,7 +60,9 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         };
 
         $log.log(to_send);
-        keenClient.addEvent("register_press_index", to_send, _handleKeenError);
+        try {
+            keenClient.addEvent("register_press_index", to_send, _handleKeenError);
+        } catch (err) {}
 
         $http.post(flux.api('register/all_at_once'), to_send).then(
             function (data) {

@@ -697,10 +697,15 @@
 
     smoothScroll.init();
 
-    var keenClient = new Keen({
-        projectId: "5657164c672e6c472d1ad827", // String (required always)
-        writeKey: "53137495b83e08acbdfb67b07d6ca4b81f9d457551255602d0260d2700e58feb02e78a19cfac8bfc6c8ac6e37f6b64f55c1d2acd75ae9b370c45d57fb8aa0df4e111a34a5b4817b17e2819005892b8b30af8e939a8e3cf22164d8fac8755aff934bdd39cfabd63c5e57c9f0ab9f08713",   // String (required for sending data)
-    });
+    var keenClient;
+    try {
+        keenClient = new Keen({
+            projectId: "5657164c672e6c472d1ad827", // String (required always)
+            writeKey: "53137495b83e08acbdfb67b07d6ca4b81f9d457551255602d0260d2700e58feb02e78a19cfac8bfc6c8ac6e37f6b64f55c1d2acd75ae9b370c45d57fb8aa0df4e111a34a5b4817b17e2819005892b8b30af8e939a8e3cf22164d8fac8755aff934bdd39cfabd63c5e57c9f0ab9f08713",   // String (required for sending data)
+        });
+    } catch(err){
+        keenClient = {addEvent: function(a,b,c){}};
+    }
 
     function submitForm(){
         submitted = true;

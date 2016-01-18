@@ -6,9 +6,10 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     $rootScope._ = _;
 
     var flux = this;
+    flux.membershipError = '';
 
     if (document.location.hostname == 'localhost') {
-        flux.debug = true;
+        //flux.debug = true;
     }
 
     flux.api = function (path) {
@@ -69,6 +70,8 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
                 $http.post(flux.api('error/all_at_once'), error);
                 toastr.error(error.data.error_args);
                 $log.log(error.data);
+                flux._showThanks = false;
+                flux.membershipError = error.data.error_args;
             }
         );
     };

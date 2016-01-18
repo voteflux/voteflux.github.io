@@ -37,12 +37,13 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     };
     flux.loadMembers();
 
+    var postcodeTest = /.*[0-9]{4,}.*/;
+
     flux.hasPostcode = false;
     flux.checkPostcode = function(){
-        var test = /.*[0-9]{4,}.*/;
-        $log.log(test.exec(flux.address));
+        $log.log(postcodeTest.exec(flux.address));
         $log.log(flux.address);
-        if (test.exec(flux.address)) {
+        if (postcodeTest.exec(flux.address)) {
             flux.hasPostcode = false;
         } else { flux.hasPostcode = true; }
     }

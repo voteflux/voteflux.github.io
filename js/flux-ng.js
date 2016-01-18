@@ -79,6 +79,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     flux._showThanks = false;
     flux.showThanks = function () {
         flux._showThanks = true;
+        flux.membershipError = '';
     };
 
     flux.btnClickLog = function(btnRef){

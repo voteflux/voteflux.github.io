@@ -30,10 +30,12 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         flux.members += 1;
     };
     flux.loadMembers = function () {
+        $log.log('Loading members');
         $http.get(flux.api('getinfo'))
             .success(function (data) {
                 flux.members = data['n_members'];
-            })
+            });
+        setTimeout(flux.loadMembers, 1000 * 60 * 10);
     };
     flux.loadMembers();
 

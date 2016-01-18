@@ -105,7 +105,8 @@
                         <a class="m1 btn btn-primary h2 p2" data-scroll href="#membership" ng-click="flux.btnClickLog('top-membership')">Sign Up &mdash; It's Free</a>
                     </div>
                     <div class='mt3'>
-                        <span class='h3 white'>{{flux.members}} members registered</span>
+                        <span class='h3 white'>{{flux.members}} members registered</span><br>
+                        <small class=""><a data-scroll class="white" href="#faq-members">(How many members do we need?)</a></small>
                     </div>
                 </div>
             </div>
@@ -446,7 +447,7 @@
                                   action="//docs.google.com/forms/d/1TFjmCDQgA-_EDflrh9RPI_Lywp9viF2eOdjrbU4s30Q/formResponse"
                                   method="post" target="response_iframe" onsubmit="submitForm();"
                                   ng-submit='flux.memberSubmit()'>
-                                <label>Your Name
+                                <label>Your Name <span class="red">including middle names</span>, e.g. John Mark Smith
                                     <small>(as on the electoral roll)</small>
                                 </label>
                                 <input class='field block col-12 mb1' type="text" name="entry.1069132858" required placeholder="Name">
@@ -575,7 +576,7 @@
                 This means you're able to support Flux as a founding member if you're a member of any other party with a parliamentarian (so Labor, Liberal, Nationals, Greens, etc are all okay). The only time it is an issue is if you are a member of a party who does not have a parliamentarian, and are used by that party to support their registration.
             </p>
 
-            <h3>How many members are required for registration?</h3>
+            <h3 id="faq-members">How many members are required for registration?</h3>
             <p>
                 We can submit anywhere from 500 to 550 members to the AEC for registration.
                 However, the counter (currently reading {{flux.members}}) does not reflect how many members have valid details <a href="https://oevf.aec.gov.au/">according to the AEC</a>.

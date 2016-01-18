@@ -438,7 +438,7 @@
                     <div ng-show='!flux._showThanks || flux.debug'>
                         <h3 class='mt0'>Become A Member &mdash; Make It Happen</h3>
 
-                        <h3 class="mt0 bg-orange" ng-show="flux.membershipError != ''">Error: {{flux.membershipError}}</h3>
+                        <h3 class="mt0 bg-orange rounded" ng-show="flux.membershipError != ''">Error: {{flux.membershipError}}</h3>
 
                         <p>To become a founding member of Flux you must fill out the form below. It's very important your details match those on the electoral roll exactly. You can confirm them on the <a href="https://oevf.aec.gov.au/">AEC website</a>.</p>
 
@@ -464,7 +464,8 @@
                                 <label>Your residential address <span class="red">including postcode</span>
                                     <small>(as on electoral roll)</small>
                                 </label>
-                                <textarea class='field block col-12 mb1' name="entry.1799101669" rows="3" cols="0" required></textarea>
+                                <textarea class='field block col-12 mb1' id='input-address' name="entry.1799101669" rows="3" cols="0" required ng-model="flux.address" ng-change="flux.checkPostcode()"></textarea>
+                                <p class="bg-orange h4 rounded p2" ng-show="flux.hasPostcode">Warning: no postcode detected.</p>
                                 <label>Your date of birth
                                     <small>(required by AEC)</small>
                                 </label>

@@ -12,6 +12,12 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         //flux.debug = true;
     }
 
+    var getEntry = function (name) {
+        var obj = $("[name='" + name + "']");
+        $log.log(obj);
+        return obj.val();
+    };
+
     flux.api = function (path) {
         if (flux.debug) {
             return "http://localhost:5000/" + path;
@@ -31,15 +37,19 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     };
     flux.loadMembers();
 
+    flux.hasPostcode = false;
+    flux.checkPostcode = function(){
+        var test = /.*[0-9]{4,}.*/;
+        $log.log(test.exec(flux.address));
+        $log.log(flux.address);
+        if (test.exec(flux.address)) {
+            flux.hasPostcode = false;
+        } else { flux.hasPostcode = true; }
+    }
+
     flux.memberSubmit = function () {
         flux.showThanks();
         smoothScroll.animateScroll(null, '#membership');
-
-        var getEntry = function (name) {
-            var obj = $("[name='" + name + "']");
-            $log.log(obj);
-            return obj.val();
-        };
 
         var dob = new Date();
         dob.setUTCDate(getEntry('entry.1115890700_day'));

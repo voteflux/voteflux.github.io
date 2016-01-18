@@ -9,7 +9,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     flux.membershipError = '';
 
     if (document.location.hostname == 'localhost') {
-        //flux.debug = true;
+        flux.debug = true;
     }
 
     var getEntry = function (name) {

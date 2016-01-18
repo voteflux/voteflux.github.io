@@ -105,7 +105,8 @@
                         <a class="m1 btn btn-primary h2 p2" data-scroll href="#membership" ng-click="flux.btnClickLog('top-membership')">Sign Up &mdash; It's Free</a>
                     </div>
                     <div class='mt3'>
-                        <span class='h3 white'>{{flux.members}} members registered</span><br>
+                        <span class="h3 white" ng-show="false">Loading...<br></span>
+                        <span ng-show="true" class='h3 white'>{{flux.members}} members registered</span>
                         <!-- <small class=""><a data-scroll class="white" href="#faq-members">(How many members do we need?)</a></small> -->
                     </div>
                 </div>

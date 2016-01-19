@@ -26,7 +26,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     };
 
     flux.members = 450;
-    flux.validMembers = 235;
+    flux.validMembers = 251;
     flux.incrementMembers = function () {
         flux.members += 1;
     };

@@ -26,6 +26,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     };
 
     flux.members = 450;
+    flux.validMembers = 235;
     flux.incrementMembers = function () {
         flux.members += 1;
     };
@@ -34,6 +35,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         $http.get(flux.api('getinfo'))
             .success(function (data) {
                 flux.members = data['n_members'];
+                flux.validMembers = data['n_members_validated'];
             });
         setTimeout(flux.loadMembers, 1000 * 60 * 10);
     };

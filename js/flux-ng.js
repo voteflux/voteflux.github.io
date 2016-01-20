@@ -25,8 +25,8 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         return "https://api.voteflux.org/" + path;
     };
 
-    flux.members = 450;
-    flux.validMembers = 251;
+    flux.members = 550;
+    flux.validMembers = 270;
     flux.incrementMembers = function () {
         flux.members += 1;
     };
@@ -65,6 +65,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         var to_send = {
             'name': getEntry('entry.1069132858'),
             'valid_regions': getEntry('entry.485675243') === "Yes" ? ['AUS'] : [],
+            'onAECRoll': getEntry('entry.485675243') === "Yes",
             'email': getEntry('entry.1201109565'),
             'address': getEntry('entry.1799101669'),
             'dob': dob,

@@ -36,6 +36,8 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
             .success(function (data) {
                 flux.members = data['n_members'];
                 flux.validMembers = data['n_members_validated'];
+                flux.last_member_signup = data['last_member_signup'] * 1000;
+                flux.signup_ago = moment().to(moment(flux.last_member_signup));
             });
         setTimeout(flux.loadMembers, 1000 * 60 * 10);
     };

@@ -27,8 +27,12 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
 
     flux.members = 550;
     flux.validMembers = 270;
+    flux.signup_ago = 'an hour ago';
     flux.incrementMembers = function () {
         flux.members += 1;
+    };
+    flux._setNewestMemberAgo = function(){
+        flux.signup_ago = moment().to(moment(flux.last_member_signup));
     };
     flux.loadMembers = function () {
         $log.log('Loading members');
@@ -37,9 +41,9 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
                 flux.members = data['n_members'];
                 flux.validMembers = data['n_members_validated'];
                 flux.last_member_signup = data['last_member_signup'] * 1000;
-                flux.signup_ago = moment().to(moment(flux.last_member_signup));
+                flux._setNewestMemberAgo();
             });
-        setTimeout(flux.loadMembers, 1000 * 60 * 10);
+        setTimeout(flux.loadMembers, 1000 * 60);
     };
     flux.loadMembers();
 

@@ -60,7 +60,10 @@ Unfortunately I'm short on time at the moment, so I will have to leave the expla
 Cheers,
 Max
 
-    Footnotes:
-    [1] Some definitions:
-    'bad' policy: formed without an explanation behind it, just an ideological position rather than explanation, arbitrary, etc
-    'expensive': in the Flux marketplace tokens exist to swap. When attempting to acquire a monopoly position in a vote it becomes asymptotically difficult due to demand and supply.
+Footnotes:
+
+[1] Some definitions:
+
+'bad' policy: formed without an explanation behind it, just an ideological position rather than explanation, arbitrary, etc
+
+'expensive': in the Flux marketplace tokens exist to swap. When attempting to acquire a monopoly position in a vote it becomes asymptotically difficult due to demand and supply.

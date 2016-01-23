@@ -41,7 +41,7 @@ PS. We're going to release some videos after registration that go into more deta
 
 Email, 14th Jan 2016
 
-> What happens if everyone decides to vote for a policy that is contrary to some of the higher principles you have. For example everyone registered decides to vote to <<insert terrible actions here>>?
+> What happens if everyone decides to vote for a policy that is contrary to some of the higher principles you have. For example everyone registered decides to vote to [insert terrible actions here]?
 
 Flux, like any democratic system, is able to be used for evil as well as good. What we focus on is the ability of Flux to correct mistakes, instead of pushing through the 'right' policy from day one (which we think is part of the problem with canonical democracy). Ultimately we always make room for the possibility that whatever is current policy is wrong, and this means sometimes we might exist in an intermediate place that isn't ideal. To answer your first question: the integrity of Flux is of the utmost importance, so we vote in such a way to maintain that always. Simply: if Flux maintains integrity it is still able to fix mistakes later on, but if we try to vote on personal morals (ignoring the direction of the Flux system) we destroy the integrity of Flux and thus can't use it to fix mistakes later on (or at least the ability is diminished), thus we err on the side of protecting Flux.
 

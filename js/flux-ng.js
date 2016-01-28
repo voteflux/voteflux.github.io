@@ -25,8 +25,8 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         return "https://api.voteflux.org/" + path;
     };
 
-    flux.members = 550;
-    flux.validMembers = 270;
+    flux.members = 800;
+    flux.validMembers = 550;
     flux.signup_ago = 'an hour ago';
     flux.incrementMembers = function () {
         flux.members += 1;

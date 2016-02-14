@@ -18,6 +18,11 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         return obj.val();
     };
 
+    flux.handleError = function(error){
+        $log.log('An error occured:');
+        $log.log(error);
+    };
+
     flux.api = function (path) {
         if (flux.debug) {
             return "http://localhost:5000/" + path;
@@ -141,4 +146,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
             'referrer': flux.referrer
         });
     }
+
+    flux.articles = [];
+    $http.get("/articles.json").then(function(data){ flux.articles = data['data']; $log.log(data); }, flux.handleError);
 });

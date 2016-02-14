@@ -24,7 +24,7 @@ gulp.task('js',function(){
 });
 
 gulp.task("default", ['browser-sync'], function(){
-	gulp.watch("**/*.html", ['html']);
-	gulp.watch("**/*.css", ['css']);
-	gulp.watch("**/*.js", ['js']);
+	gulp.watch("./*.html", ['html']);
+	gulp.watch("css/*.css", ['css']);
+	gulp.watch("js/*.js", ['js']);
 });

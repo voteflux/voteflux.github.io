@@ -26,6 +26,19 @@ Nathan and I are refining the process where possible. Currently we're accepting 
 
 We're open to suggestions and criticisms about this process. Please email `leadership@voteflux.org` if you'd like to discuss anything.
 
+## Timeline
+
+The likely timeline for candidate selection (presuming a double D):
+
+* Applications accepted: mid Feb
+* Preliminary talks: March
+* Continued talks: April
+* Applications close: 12 May (DD date)
+* More talks: May
+* Decision: Early June
+* Submission to AEC: Min June
+* Election: July 2
+
 ## Candidates so far
 
 * Max Kaye

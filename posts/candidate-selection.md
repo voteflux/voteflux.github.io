@@ -21,3 +21,12 @@ The second method is harder to test for and cultivate. Particularly, a high rega
 ## Selection process
 
 Nathan and I are refining the process where possible. Currently we're accepting expressions of interest via this [Google form](https://docs.google.com/forms/d/1LhpFQipvUHKSi68EJlHcvoaR7xhCLQ0CoSCjYNhC3Rg/viewform). There is no set process, and there likely won't be one due to the overhead. We'll be talking with poeple individually to try and guage how appropriate they might be. Diversity is important to us.
+
+## Suggestions
+
+We're open to suggestions and criticisms about this process. Please email `leadership@voteflux.org` if you'd like to discuss anything.
+
+## Candidates so far
+
+* Max Kaye
+* Nathan Spataro

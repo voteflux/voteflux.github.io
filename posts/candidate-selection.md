@@ -30,3 +30,28 @@ We're open to suggestions and criticisms about this process. Please email `leade
 
 * Max Kaye
 * Nathan Spataro
+
+## Potential Attacks
+
+There are a few attacks that can be made if we allow membership to vote on candidates. At this stage we're small and fragile which is why we're not allowing voting on candidates.
+
+### Simple Hostile Bloc
+
+Presume a larger group than Flux (like another party) is able to:
+
+* Join Flux
+* Nominate candidates
+* Vote on candidates
+
+The comparative size means the majority of Flux candidates would be chosen without the primary goal (above) in mind. This leads to a loss of integrity, either because the senators will defect, or remain and attempt to subvert Flux at a crucial moment.
+ 
+### Loyalty to Bloc over Flux
+
+Let's presume there is, say, 1/6th of Flux is essentially a faction (call it F). They nominate one candidate who is elected (presuming all 6 with a good chance are elected).
+
+The following situation now occurs:
+
+* If F's senator remains with Flux the control 1/6th of Flux resources ~> 1 senator.
+* If F's senator defects but F remains in Flux, they still control 1/6th of resources ~> 5/6ths of a senator, **and** their senator ~> 1 + 5/6ths senators total.
+
+Thus it is in F's interest for their senator to defect.

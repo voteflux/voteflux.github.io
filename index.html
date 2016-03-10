@@ -722,10 +722,23 @@
                             <a href="https://github.com/voteflux/voteflux.github.io/blob/master/responses.md">Responses to concerns</a> - emails and other responses to various concerns.
                         </li>
                     </ul>
-                    <hr>
-                    <h4>Press</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="media" class="content-26 bg-silver">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <h3 class="center">Press / Media</h3>
                     <ul class="left-align">
-                        <li ng-repeat="articleDeets in flux.articles track by $index"><a href="{{articleDeets.url}}">{{articleDeets.date}} &mdash; {{articleDeets.title}}</a> ({{articleDeets.publishedIn}}, {{articleDeets.author}})</li>
+                        <li ng-repeat="articleDeets in flux.articles track by $index" ng-if="articleDeets.major"><a href="{{articleDeets.url}}">{{articleDeets.date}} &mdash; {{articleDeets.title}}</a> ({{articleDeets.publishedIn}}, {{articleDeets.author}})</li>
+                    </ul>
+                    <hr>
+                    <h5>Minor Press</h5>
+                    <ul class="left-align">
+                        <li ng-repeat="articleDeets in flux.articles track by $index" ng-if="!articleDeets.major"><a href="{{articleDeets.url}}">{{articleDeets.date}} &mdash; {{articleDeets.title}}</a> ({{articleDeets.publishedIn}}, {{articleDeets.author}})</li>
                     </ul>
                 </div>
             </div>

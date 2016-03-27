@@ -20,7 +20,7 @@ The second method is harder to test for and cultivate. Particularly, a high rega
 
 ## Selection process
 
-Nathan and I are refining the process where possible. Currently we're accepting expressions of interest via this [Google form](https://docs.google.com/forms/d/1LhpFQipvUHKSi68EJlHcvoaR7xhCLQ0CoSCjYNhC3Rg/viewform). There is no set process, and there likely won't be one due to the overhead. We'll be talking with poeple individually to try and guage how appropriate they might be. Diversity is important to us.
+Nathan and I are refining the process where possible. Currently we're accepting expressions of interest via this [Google form](https://docs.google.com/forms/d/1LhpFQipvUHKSi68EJlHcvoaR7xhCLQ0CoSCjYNhC3Rg/viewform). There is no set process, and there likely won't be one due to the overhead. We'll be talking with people individually to try and gauge how appropriate they might be. Diversity is important to us.
 
 ## Suggestions
 

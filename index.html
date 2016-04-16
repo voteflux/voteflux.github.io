@@ -567,10 +567,11 @@
                     </div>
                     <div class="center h2 mt3" id='member-counter'>
                         {{flux.members}} members registered
-                        <h4>Live Graph (delayed by a few minutes)</h4>
-                        <iframe class='block' style="width:600px; height: 371px; margin: auto;" seamless=""
-                                frameborder="0" scrolling="yes"
-                                src="https://docs.google.com/spreadsheets/d/1oODt6m__XMuTT69nekt98ZY6Cl_cWpaQenMrjmLqDmo/pubchart?oid=53928827&amp;format=interactive"></iframe>
+                        <hr class="p3">
+                        <h3>Live (ish) Membership Stats</h3>
+                        <div id="membershipChart" style="height: 400px; max-width: 600px;"></div>
+                        <div id="memberDobYearChart" style="height: 400px; max-width: 600px;"></div>
+
                     </div>
                 </div>
             </div>
@@ -816,6 +817,7 @@
 <script src='js/smooth-scroll.min.js'></script>
 <script src="js/vendor/keen.min.js" type="text/javascript"></script>
 <script src="js/vendor/moment.min.js"></script>
+<script src="js/vendor/plotly-1.9.0.min.js"></script>
 <!-- Google Tag Manager -->
 <noscript>
     <iframe src="//www.googletagmanager.com/ns.html?id=GTM-ND94TG"
@@ -881,6 +883,6 @@
 <!-- Google Analytics end -->
 
 <!--this goes last to ensure everything else is loaded-->
-<script src='js/flux-ng.js?00002'></script>
+<script src='js/flux-ng.js?00003'></script>
 </body>
 </html>

@@ -149,4 +149,23 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
 
     flux.articles = [];
     $http.get("/articles.json").then(function(data){ flux.articles = data['data']; $log.log(data); }, flux.handleError);
+
+    $http.get(flux.api('public_stats')).then(function(data){
+        $log.log("Got public stats ---V ");
+        $log.log(data['data']);
+
+        var tss = _.map(data.data.signup_times, function(ts){return new Date(ts*1000);});
+        tss.reverse();
+        var ns = _.range(1, tss.length + 1);
+        var plotData = [{x: tss, y: ns, type: 'scatter'}];
+        Plotly.newPlot('membershipChart', plotData, {title: 'Members v Time'});
+
+        var years = Object.keys(data.data.dob_years);
+        years.sort();
+        var year_freq = _.map(years, function(y){return data.data.dob_years[y]});
+        var plotData2 = [{x: years, y: year_freq, type: 'bar'}];
+        Plotly.newPlot('memberDobYearChart', plotData2, {title: 'Member Years of Birth'});
+
+        $log.log('Drew Charts');
+    }, flux.handleError)
 });

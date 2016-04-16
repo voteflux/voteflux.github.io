@@ -166,6 +166,12 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         var plotData2 = [{x: years, y: year_freq, type: 'bar'}];
         Plotly.newPlot('memberDobYearChart', plotData2, {title: 'Member Years of Birth'});
 
+        var states = Object.keys(data.data.states);
+        states.sort();
+        var state_n = _.map(states, function(y){return data.data.states[y]});
+        var plotData3 = [{x: states, y: state_n, type: 'bar'}];
+        Plotly.newPlot('memberStateChart', plotData3, {title: 'Member States'});
+
         $log.log('Drew Charts');
     }, flux.handleError)
 });

@@ -570,9 +570,14 @@
                         {{flux.members}} members registered
                         <hr class="p3">
                         <h3>Live (ish) Membership Stats</h3>
-                        <div id="membershipChart" style="height: 400px; max-width: 600px;"></div>
-                        <div id="memberDobYearChart" style="height: 400px; max-width: 600px;"></div>
-                        <div id="memberStateChart" style="height: 400px; max-width: 600px;"></div>
+                        <div class="clearfix mxn2">
+                            <div id="membershipChart" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
+                            <div id="memberDobYearChart" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
+                        </div>
+                        <div class="row">
+                            <div id="memberStateChart" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
+                            <div id="memberSignupDaysAgo" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -884,6 +889,6 @@
 <!-- Google Analytics end -->
 
 <!--this goes last to ensure everything else is loaded-->
-<script src='js/flux-ng.js?00006'></script>
+<script src='js/flux-ng.js?00007'></script>
 </body>
 </html>

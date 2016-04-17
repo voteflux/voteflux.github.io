@@ -48,7 +48,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
                 flux.last_member_signup = data['last_member_signup'] * 1000;
                 flux._setNewestMemberAgo();
             });
-        setTimeout(flux.loadMembers, 1000 * 60);
+        setTimeout(flux.loadMembers, 1000 * 60 * 10);
     };
     flux.loadMembers();
 

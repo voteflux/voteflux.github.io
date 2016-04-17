@@ -25,9 +25,9 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
 
     flux.api = function (path) {
         if (flux.debug) {
-            return "http://localhost:5000/" + path;
+            return "http://localhost:5000/api/v0/" + path;
         }
-        return "https://api.voteflux.org/" + path;
+        return "https://api.voteflux.org/api/v0/" + path;
     };
 
     flux.members = 800;
@@ -58,9 +58,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     flux.checkPostcode = function(){
         $log.log(postcodeTest.exec(flux.address));
         $log.log(flux.address);
-        if (postcodeTest.exec(flux.address)) {
-            flux.hasPostcode = false;
-        } else { flux.hasPostcode = true; }
+        flux.hasPostcode = !postcodeTest.exec(flux.address);
     }
 
     flux.memberSubmit = function () {

@@ -25,9 +25,9 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
 
     flux.api = function (path) {
         if (flux.debug) {
-            return "http://localhost:5000/" + path;
+            return "http://localhost:5000/api/v0/" + path;
         }
-        return "https://api.voteflux.org/" + path;
+        return "https://api.voteflux.org/api/v0/" + path;
     };
 
     flux.members = 800;
@@ -48,7 +48,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
                 flux.last_member_signup = data['last_member_signup'] * 1000;
                 flux._setNewestMemberAgo();
             });
-        setTimeout(flux.loadMembers, 1000 * 61 * 1);
+        setTimeout(flux.loadMembers, 1000 * 60 * 10);
     };
     flux.loadMembers();
 
@@ -58,10 +58,8 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     flux.checkPostcode = function(){
         $log.log(postcodeTest.exec(flux.address));
         $log.log(flux.address);
-        if (postcodeTest.exec(flux.address)) {
-            flux.hasPostcode = false;
-        } else { flux.hasPostcode = true; }
-    };
+        flux.hasPostcode = !postcodeTest.exec(flux.address);
+    }
 
     flux.memberSubmit = function () {
         flux.showThanks();
@@ -171,6 +169,23 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         var state_n = _.map(states, function(y){return data.data.states[y]});
         var plotData3 = [{x: states, y: state_n, type: 'bar'}];
         Plotly.newPlot('memberStateChart', plotData3, {title: 'Member States'});
+
+        var nDays = 30;
+        var recent_tss = _.filter(data.data.signup_times, function(timestamp){ return timestamp*1000 > (Date.now() - 1000 * 60 * 60 * 24 * nDays); });
+        var dayLen = 60 * 60 * 24;  // 1 day
+        var mostRecent = _.max(recent_tss);
+        var results = _.fill(new Array(nDays), 0);
+        _.map(recent_tss, function(ts){
+            var pos = nDays - Math.floor((mostRecent - ts) / dayLen) - 1;
+            results[pos] += 1;
+        });
+        $log.log(results);
+        var plotData4 = [{x: _.map(_.range(30, 0, -1), function(i){return "-" + i.toString();}), y: results, type: 'bar'}];
+        Plotly.newPlot('memberSignupDaysAgo', plotData4, {
+            title: 'Member Signup for Last 30 Days',
+            xaxis: {title: 'Days Ago'}, yaxis: {title: '# Signups'}
+        });
+
 
         $log.log('Drew Charts');
     }, flux.handleError)

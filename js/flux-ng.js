@@ -61,7 +61,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         if (postcodeTest.exec(flux.address)) {
             flux.hasPostcode = false;
         } else { flux.hasPostcode = true; }
-    }
+    };
 
     flux.memberSubmit = function () {
         flux.showThanks();

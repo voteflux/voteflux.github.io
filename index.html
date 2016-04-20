@@ -781,12 +781,19 @@
                     <h3 class="center">Press / Media</h3>
                     <p>Media enquiries: <strong>media@voteflux.org</strong></p>
                     <ul class="left-align">
-                        <li ng-repeat="articleDeets in flux.articles track by $index" ng-if="articleDeets.major"><a href="{{articleDeets.url}}">{{articleDeets.date}} &mdash; {{articleDeets.title}}</a> ({{articleDeets.publishedIn}}, {{articleDeets.author}})</li>
+                        <li ng-repeat="articleDeets in flux.articles track by $index" ng-if="articleDeets.type == 'major'"><a href="{{articleDeets.url}}">{{articleDeets.date}} &mdash; {{articleDeets.title}}</a> ({{articleDeets.publishedIn}}, {{articleDeets.author}})</li>
                     </ul>
+
                     <hr>
                     <h5>Minor Press</h5>
                     <ul class="left-align">
-                        <li ng-repeat="articleDeets in flux.articles track by $index" ng-if="!articleDeets.major"><a href="{{articleDeets.url}}">{{articleDeets.date}} &mdash; {{articleDeets.title}}</a> ({{articleDeets.publishedIn}}, {{articleDeets.author}})</li>
+                        <li ng-repeat="articleDeets in flux.articles track by $index" ng-if="articleDeets.type == 'minor'"><a href="{{articleDeets.url}}">{{articleDeets.date}} &mdash; {{articleDeets.title}}</a> ({{articleDeets.publishedIn}}, {{articleDeets.author}})</li>
+                    </ul>
+
+                    <hr>
+                    <h5>Press Releases</h5>
+                    <ul class="left-align">
+                        <li ng-repeat="articleDeets in flux.articles track by $index" ng-if="articleDeets.type == 'pr'"><a href="{{articleDeets.url}}">{{articleDeets.date}} &mdash; {{articleDeets.title}}</a> ({{articleDeets.publishedIn}}, {{articleDeets.author}})</li>
                     </ul>
                 </div>
             </div>

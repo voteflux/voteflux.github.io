@@ -48,7 +48,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
                 flux.last_member_signup = data['last_member_signup'] * 1000;
                 flux._setNewestMemberAgo();
             });
-        setTimeout(flux.loadMembers, 1000 * 60 * 10);
+        setTimeout(flux.loadMembers, 1000 * 61 * 1);
     };
     flux.loadMembers();
 
@@ -171,16 +171,32 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         Plotly.newPlot('memberStateChart', plotData3, {title: 'Member States'});
 
         var nDays = 30;
-        var recent_tss = _.filter(data.data.signup_times, function(timestamp){ return timestamp*1000 > (Date.now() - 1000 * 60 * 60 * 24 * nDays); });
-        var dayLen = 60 * 60 * 24;  // 1 day
-        var mostRecent = _.max(recent_tss);
-        var results = _.fill(new Array(nDays), 0);
+        var _now = Date.now();
+        var recent_tss = _.filter(data.data.signup_times, function(timestamp){ return timestamp*1000 > (_now - 1000 * 60 * 60 * 24 * (nDays + 1)); });
+
+        // http://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date
+        function toJSONLocal (date) {
+            var local = new Date(date);
+            local.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+            return local.toJSON().slice(0, 10);
+        }
+
+        var timestamp_counter = {};
         _.map(recent_tss, function(ts){
-            var pos = nDays - Math.floor((mostRecent - ts) / dayLen) - 1;
-            results[pos] += 1;
-        });
+            var ts_date = new Date(ts*1000);
+            var local_y_m_d = toJSONLocal(ts_date);
+            if (timestamp_counter[local_y_m_d] === undefined){  // why can't js have a nice std lib like python? Counter anyone
+                timestamp_counter[local_y_m_d] = 1
+            } else { timestamp_counter[local_y_m_d] += 1; }
+        })
+        var results = timestamp_counter;
         $log.log(results);
-        var plotData4 = [{x: _.map(_.range(30, 0, -1), function(i){return "-" + i.toString();}), y: results, type: 'bar'}];
+        var dates4 = Object.keys(results);
+        dates4.pop();  // account for the one day added when generating recent_tss;
+        var newMembers = _.map(dates4, function(d){ return results[d]; });
+        newMembers.pop();  // account for the one day added when generating recent_tss;
+        var plotData4 = [{x: dates4, y: newMembers, type: 'bar'}];
+
         Plotly.newPlot('memberSignupDaysAgo', plotData4, {
             title: 'Member Signup for Last 30 Days',
             xaxis: {title: 'Days Ago'}, yaxis: {title: '# Signups'}

@@ -82,7 +82,9 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
             'referred_by': getEntry('entry.279410956'),
             'member_comment': getEntry('entry.1861406557'),
             'session_uuid': flux._uuid,
-            'href': document.location.href
+            'href': document.location.href,
+            'user_agent': navigator.userAgent,
+            'is_mobile_probably': (window.innerWidth <= 700)
         };
 
         $log.log(to_send);
@@ -185,10 +187,10 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         _.map(recent_tss, function(ts){
             var ts_date = new Date(ts*1000);
             var local_y_m_d = toJSONLocal(ts_date);
-            if (timestamp_counter[local_y_m_d] === undefined){  // why can't js have a nice std lib like python? Counter anyone
+            if (timestamp_counter[local_y_m_d] === undefined){  // why can't js have a nice std lib like python? `Counter` anyone
                 timestamp_counter[local_y_m_d] = 1
             } else { timestamp_counter[local_y_m_d] += 1; }
-        })
+        });
         var results = timestamp_counter;
         $log.log(results);
         var dates4 = Object.keys(results);

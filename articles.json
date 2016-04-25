@@ -1,11 +1,21 @@
 [
   {
+    "title": "PR: Changing politics in the digital age: How two entrepreneurs plan to use technology to disrupt Australian politics",
+    "url": "https://github.com/voteflux/voteflux.github.io/blob/master/press_releases/pr_flux_201604014.pdf",
+    "date": "2016-04-14",
+    "author": "Flux",
+    "publishedIn": "Press Release",
+    "major": false,
+    "type": "pr"
+  },
+  {
     "title": "OPINION: Crowdsourcing democracy for the disenchanted",
     "url": "http://www.begadistrictnews.com.au/story/3842657/crowdsourcing-democracy-for-the-fed-up/",
     "date": "2016-04-12",
     "author": "Alasdair McDonald",
     "publishedIn": "Bega District News",
-    "major": false
+    "major": false,
+    "type": "minor"
   },
   {
     "title": "Flux: Australia’s new smart political party, where you matter",
@@ -13,7 +23,8 @@
     "date": "2016-04-11",
     "author": "Rob Idol",
     "publishedIn": "The Big Smoke",
-    "major": true
+    "major": true,
+    "type": "major"
   },
   {
     "title": "INNOVATION INSIGHTS: 14 Australian entrepreneurs share what innovation means to them",
@@ -21,7 +32,8 @@
     "date": "2016-03-21",
     "author": "Sarah Kimmorley, Josh Nicholas",
     "publishedIn": "Business Insider Australia",
-    "major": false
+    "major": false,
+    "type": "minor"
   },
   {
     "title": "Is Australia's politics in a state of Flux?",
@@ -29,7 +41,8 @@
     "date": "2016-03-21",
     "author": "Charmaine Wong",
     "publishedIn": "2SER 107.3",
-    "major": true
+    "major": true,
+    "type": "major"
   },
   {
     "title": "Crowdsourcing democracy: The party that started on Facebook",
@@ -37,7 +50,8 @@
     "date": "2016-03-01",
     "author": "Angela Lavoipierre",
     "publishedIn": "Triple J's Hack",
-    "major": true
+    "major": true,
+    "type": "major"
   },
   {
     "title": "Governments Around the World Are Warming Up to Bitcoin and the Blockchain",
@@ -45,7 +59,8 @@
     "date": "2016-03-01",
     "author": "Prableen Bajpai",
     "publishedIn": "Nasdaq",
-    "major": false
+    "major": false,
+    "type": "minor"
   },
   {
     "title": "A party for voters to 'like'",
@@ -53,7 +68,8 @@
     "date": "2016-02-23",
     "author": "Bill North",
     "publishedIn": "The Daily Examiner",
-    "major": false
+    "major": false,
+    "type": "minor"
   },
   {
     "title": "Bitcoin consultants form Flux political party in Australia",
@@ -61,7 +77,8 @@
     "date": "2016-02-23",
     "author": "Boyd Chan",
     "publishedIn": "Neowin",
-    "major": false
+    "major": false,
+    "type": "minor"
   },
   {
     "title": "New political party Flux says it wants to change Australia’s political system by focusing on policy",
@@ -69,7 +86,8 @@
     "date": "2016-02-22",
     "author": "Emily Moulton",
     "publishedIn": "news.com.au",
-    "major": true
+    "major": true,
+    "type": "major"
   },
   {
     "title": "Australian Political Party Aims to Reinvent Democracy with Blockchain Tech",
@@ -77,7 +95,8 @@
     "date": "2016-02-18",
     "author": "Traderman",
     "publishedIn": "The Merkle",
-    "major": false
+    "major": false,
+    "type": "minor"
   },
   {
     "title": "New Australian Political Party Seeks to Popularize Blockchain Voting",
@@ -85,7 +104,8 @@
     "date": "2016-02-17",
     "author": "Daniel Palmer",
     "publishedIn": "Coindesk",
-    "major": false
+    "major": false,
+    "type": "minor"
   },
   {
     "title": "Flux Party seeks to be the bitcoin of Australian politics",
@@ -93,7 +113,8 @@
     "date": "2016-02-16",
     "author": "Matt Siegel",
     "publishedIn": "Reuters",
-    "major": true
+    "major": true,
+    "type": "major"
   },
   {
     "title": "The Bitcoin of politics: Flux Party offers radical new model for democracy",
@@ -101,7 +122,8 @@
     "date": "2016-02-07",
     "author": "Heath Aston",
     "publishedIn": "SMH",
-    "major": true
+    "major": true,
+    "type": "major"
   },
   {
     "title": "New political party 'Flux' set to register",
@@ -109,6 +131,7 @@
     "date": "2016-01-27",
     "author": "AAP",
     "publishedIn": "news.com.au",
-    "major": true
+    "major": true,
+    "type": "major"
   }
 ]

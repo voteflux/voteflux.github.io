@@ -226,8 +226,8 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         var dh_x = Object.keys(hour_pop);
         var plotDataDayPop = [{x: dp_x, y: _.map(dp_x, function(x){ return day_pop[x]; })}];
         var plotDataHourPop = [{x: dh_x, y: _.map(dh_x, function(x){ return hour_pop[x]; })}];
-        Plotly.newPlot('memberDayPopularity', plotDataDayPop, {title: '# signups by day', yaxis: {'rangemode': 'tozero'}});
-        Plotly.newPlot('memberHourPopularity', plotDataHourPop, {title: '# signups by hour', yaxis: {'rangemode': 'tozero'}});
+        Plotly.newPlot('memberDayPopularity', plotDataDayPop, {title: 'All Member Signups By Day', yaxis: {'rangemode': 'tozero'}});
+        Plotly.newPlot('memberHourPopularity', plotDataHourPop, {title: 'All Member Signups By Hour', yaxis: {'rangemode': 'tozero'}});
 
 
         $log.log('Drew Charts');

@@ -154,24 +154,28 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         $log.log("Got public stats ---V ");
         $log.log(data['data']);
 
+        // members over time
         var tss = _.map(data.data.signup_times, function(ts){return new Date(ts*1000);});
         tss.reverse();
         var ns = _.range(1, tss.length + 1);
         var plotData = [{x: tss, y: ns, type: 'scatter'}];
         Plotly.newPlot('membershipChart', plotData, {title: 'Members v Time'});
 
+        // dob years histogram
         var years = Object.keys(data.data.dob_years);
         years.sort();
         var year_freq = _.map(years, function(y){return data.data.dob_years[y]});
         var plotData2 = [{x: years, y: year_freq, type: 'bar'}];
         Plotly.newPlot('memberDobYearChart', plotData2, {title: 'Member Years of Birth'});
 
+        // states histogram
         var states = Object.keys(data.data.states);
         states.sort();
         var state_n = _.map(states, function(y){return data.data.states[y]});
         var plotData3 = [{x: states, y: state_n, type: 'bar'}];
         Plotly.newPlot('memberStateChart', plotData3, {title: 'Member States'});
 
+        // members over last 30 days
         var nDays = 30;
         var _now = Date.now();
         var recent_tss = _.filter(data.data.signup_times, function(timestamp){ return timestamp*1000 > (_now - 1000 * 60 * 60 * 24 * (nDays + 1)); });
@@ -203,6 +207,27 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
             title: 'Member Signup for Last 30 Days',
             xaxis: {title: 'Days Ago'}, yaxis: {title: '# Signups'}
         });
+
+        // day and hour popularity
+        var day_pop = {};
+        var hour_pop = {};
+        var day_map = {0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4:'Thursday', 5:'Friday', 6:'Saturday'};
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        _.map(tss, function(ts){
+            var d = day_map[ts.getDay()];
+            if (day_pop[d] === undefined) day_pop[d] = 1;
+            else day_pop[d] += 1;
+
+            var h = ts.getHours();
+            if (hour_pop[h] === undefined) hour_pop[h] = 1;
+            else hour_pop[h] += 1;
+        });
+        var dp_x = days;
+        var dh_x = Object.keys(hour_pop);
+        var plotDataDayPop = [{x: dp_x, y: _.map(dp_x, function(x){ return day_pop[x]; })}];
+        var plotDataHourPop = [{x: dh_x, y: _.map(dh_x, function(x){ return hour_pop[x]; })}];
+        Plotly.newPlot('memberDayPopularity', plotDataDayPop, {title: '# signups by day', yaxis: {'rangemode': 'tozero'}});
+        Plotly.newPlot('memberHourPopularity', plotDataHourPop, {title: '# signups by hour', yaxis: {'rangemode': 'tozero'}});
 
 
         $log.log('Drew Charts');

@@ -551,7 +551,7 @@
                                           cols="0"></textarea>
 
                                 <div class='center'>
-                                    <input class='btn btn-primary p2 h3' type="submit" value="Shape The Future (Submit)"
+                                    <input class='btn btn-primary p2 h3' type="submit" value="Join The Movement!"
                                            ng-click="flux.incrementMembers()">
                                 </div>
                             </form>
@@ -574,14 +574,20 @@
                             <div id="membershipChart" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
                             <div id="memberDobYearChart" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
                         </div>
-                        <div class="row">
-                            <div id="memberStateChart" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
-                            <div id="memberSignupDaysAgo" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
-                        </div>
-                        <div class="row">
-                            <div id="memberDayPopularity" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
-                            <div id="memberHourPopularity" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
-                        </div>
+                        <!--<button class='btn btn-primary p1 h6' ng-click="_showExtraGraphs = !_showExtraGraphs">Toggle Other Graphs</button>-->
+                        <!--<div ng-if="_showExtraGraphs">-->
+                            <div class="row">
+                                <div id="memberStateChart" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
+                                <div id="memberSignupDaysAgo" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
+                            </div>
+                            <div class="row">
+                                <div id="memberDayPopularity" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
+                                <div id="memberHourPopularity" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
+                            </div>
+                            <div class="row">
+                                <div id="stateSignupTimes" style="height: 400px; max-width: 600px;" class="col-sm-6"></div>
+                            </div>
+                        <!--</div>-->
                     </div>
                 </div>
             </div>

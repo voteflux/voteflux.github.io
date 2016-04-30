@@ -7,6 +7,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
 
     var flux = this;
     flux.membershipError = '';
+    $scope._showExtraGraphs = false;
 
     if (document.location.hostname == 'localhost') {
         flux.debug = true;
@@ -150,6 +151,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     flux.articles = [];
     $http.get("/articles.json").then(function(data){ flux.articles = data['data']; $log.log(data); }, flux.handleError);
 
+    // generate graphs from public stats
     $http.get(flux.api('public_stats')).then(function(data){
         $log.log("Got public stats ---V ");
         $log.log(data['data']);
@@ -169,16 +171,16 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         Plotly.newPlot('memberDobYearChart', plotData2, {title: 'Member Years of Birth'});
 
         // states histogram
-        var states = Object.keys(data.data.states);
+        var states = Object.keys(data.data['states']);
         states.sort();
-        var state_n = _.map(states, function(y){return data.data.states[y]});
+        var state_n = _.map(states, function(y){return data.data['states'][y]});
         var plotData3 = [{x: states, y: state_n, type: 'bar'}];
         Plotly.newPlot('memberStateChart', plotData3, {title: 'Member States'});
 
         // members over last 30 days
         var nDays = 30;
         var _now = Date.now();
-        var recent_tss = _.filter(data.data.signup_times, function(timestamp){ return timestamp*1000 > (_now - 1000 * 60 * 60 * 24 * (nDays + 1)); });
+        var recent_tss = _.filter(data.data['signup_times'], function(timestamp){ return timestamp*1000 > (_now - 1000 * 60 * 60 * 24 * (nDays + 1)); });
 
         // http://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date
         function toJSONLocal (date) {
@@ -229,6 +231,23 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
         Plotly.newPlot('memberDayPopularity', plotDataDayPop, {title: 'All Member Signups By Day', yaxis: {'rangemode': 'tozero'}});
         Plotly.newPlot('memberHourPopularity', plotDataHourPop, {title: 'All Member Signups By Hour', yaxis: {'rangemode': 'tozero'}});
 
+        // state signup times
+        //var
+        var drawStateSignupTimes = function(){
+            var stateSignupTimes = data.data['state_signup_times'];
+            var plotStateSignupTimes = [];
+            var states = Object.keys(stateSignupTimes);
+            states.forEach(function(stateName){
+                plotStateSignupTimes.push({
+                    x: _.map(stateSignupTimes[stateName], function(ts){ return new Date(ts*1000); }),
+                    y: _.range(1, stateSignupTimes[stateName].length + 1),
+                    type: 'scatter',
+                    name: stateName
+                })
+            });
+            Plotly.newPlot('stateSignupTimes', plotStateSignupTimes, {title: 'Members v Time by State'});
+        };
+        drawStateSignupTimes();
 
         $log.log('Drew Charts');
     }, flux.handleError)

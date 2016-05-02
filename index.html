@@ -863,7 +863,7 @@
 
 <!-- Start JS for page -->
 <script type="text/javascript">
-    var submitted = false;
+    var _submitted = false;
 
     smoothScroll.init();
 
@@ -877,18 +877,20 @@
         keenClient = {addEvent: function(a,b,c){}};
     }
 
-    function submitForm(){
-        submitted = true;
+    function submitForm() {
         console.log("submission recieved");
+        if (!_submitted) {
+            ga('send', {
+                hitType: 'event',
+                eventCategory: 'Membership Form',
+                eventAction: 'Submission',
+            });
 
-        ga('send', {
-            hitType: 'event',
-            eventCategory: 'Membership Form',
-            eventAction: 'Submission',
-        });
+            fbq('track', 'Complete Registration');
+            fbq('track', 'NewMember');  // a different pixle thing to the above, keep both.
+        }
 
-        fbq('track', 'Complete Registration');
-        fbq('track', 'NewMember');  // a different pixle thing to the above, keep both.
+        _submitted = true;
     }
 
 </script>

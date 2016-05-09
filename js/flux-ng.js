@@ -8,6 +8,7 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
     var flux = this;
     flux.membershipError = '';
     $scope._showExtraGraphs = false;
+    flux.signupVolunteer = false;
 
     if (document.location.hostname == 'localhost') {
         flux.debug = true;
@@ -85,7 +86,8 @@ fluxApp.controller('FluxController', function ($scope, $log, $rootScope, $http) 
             'session_uuid': flux._uuid,
             'href': document.location.href,
             'user_agent': navigator.userAgent,
-            'is_mobile_probably': (window.innerWidth <= 700)
+            'is_mobile_probably': (window.innerWidth <= 700),
+            'volunteer': flux.signupVolunteer,
         };
 
         $log.log(to_send);

@@ -1,8 +1,5 @@
 $(document).ready(function() {
 
-
-
-
 if ( $('#js-candidates').length != 0 ) {
   // init slick carousel
   $('#js-candidates').slick({
@@ -94,6 +91,20 @@ if ( $('#js-candidates').length != 0 ) {
   };
 
 
+  var fadeStart = 0 // 100px scroll or less will equiv to 1 opacity
+  var fadeUntil = 400 // 200px scroll or more will equiv to 0 opacity
+  var $fading = $('#js-fading')
+
+  $(window).bind('scroll', function(){
+      var offset = $(document).scrollTop()
+      var opacity = 0
+      if ( offset >= fadeStart && offset <= fadeUntil ) {
+          opacity = 0.001 + offset/fadeUntil;
+      } else if ( offset >= fadeUntil ) {
+          opacity = 1
+      }
+      $fading.css('opacity',opacity);
+  });
 
 
 
@@ -112,30 +123,35 @@ if ( $('#js-candidates').length != 0 ) {
   // })
 
   // get info ajax request
-  $.ajax({
-    url: "https://api.voteflux.org/api/v0/getinfo",
-    data: {
-      format: 'json'
-    },
-    error: function() {
-      console.log('error')
-    },
-    success: function(response) {
-      var data = JSON.parse(response)
-      var memberCount = data.n_members
-      var el = document.getElementById("js-member-count")
-      var elMobile = document.getElementById("js-member-count-mobile")
+  var getMembers = function() {
+    $.ajax({
+      url: "https://api.voteflux.org/api/v0/getinfo",
+      data: {
+        format: 'json'
+      },
+      error: function() {
+        console.log('error')
+      },
+      success: function(response) {
+        var data = JSON.parse(response)
+        var memberCount = data.n_members
+        var el = document.getElementById("js-member-count")
+        var elMobile = document.getElementById("js-member-count-mobile")
 
-      if (el) {
-        el.innerHTML = memberCount.toString()
-      }
-      if (elMobile) {
-        elMobile.innerHTML = memberCount.toString()
-      }
-    },
-    type: 'GET'
-  });
-
+        if (el) {
+          el.innerHTML = memberCount.toString()
+        }
+        if (elMobile) {
+          elMobile.innerHTML = memberCount.toString()
+        }
+      },
+      type: 'GET'
+    });
+  }
+  var mins = 2
+  var interval = 1000 * 60 * mins
+  getMembers();
+  setInterval(getMembers, interval);
 
 
 	var dteNow = new Date();
@@ -161,10 +177,12 @@ if ( $('#js-candidates').length != 0 ) {
       $("#js-menu").addClass('opacity-1 will-change-opacity').removeClass('hide').removeClass('opacity-0');
       $("#js-navbar-join-btn").addClass('opacity-0 will-change-opacity').removeClass('opacity-1').addClass('hide');
       $('.flux-logo-text').css({ fill: "#fff" });
+      $('#js-fading').addClass('all-transparent')
       $("#js-flux-logo-home-light").addClass('opacity-1');
       $("#js-flux-logo-text").addClass('fixed').removeClass('absolute');
       $("#js-flux-logo-home-dark").removeClass('opacity-0');
     } else {
+      $('#js-fading').removeClass('all-transparent')
       $("#js-flux-logo-text").addClass('absolute').removeClass('fixed');
       $("#js-menu").addClass('opacity-0').removeClass('opacity-1');
       $("#js-navbar-join-btn").addClass('opacity-1').removeClass('opacity-0, hide');
